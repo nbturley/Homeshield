@@ -1,8 +1,9 @@
 import "./App.css";
 import { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import "./index.css"
 
 // import Homepage from "./views/Homepage/Homepage";
-// import Questions from "./views/Questions/Questions";
+// import Questions from "./views/Questions/Questions1";
 // import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -119,7 +120,11 @@ function App() {
       {/* <Routes>
       <Route>
       <Route path='/' element={<Homepage />}/>
-      <Route path='/' element={<Questions />}/>
+      <Route path='questions1' element={<Questions1 />}/>
+      </Route>
+       <Route path='questions2' element={<Questions2 />}/>
+      </Route>
+       <Route path='questions3' element={<Questions3 />}/>
       </Route>
     </Routes> */}
       <h1>Welcome to Homeshield!</h1>
