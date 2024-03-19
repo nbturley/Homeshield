@@ -3,7 +3,6 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 32px;
-  
 }
 
 /* Top Container */
@@ -15,7 +14,7 @@ body {
   flex-shrink: 0;
   gap: 32px;
   padding: 96px 0px 87px 0px;
-  background-color: #E5E7EB;
+  background-color: #e5e7eb;
 }
 
 .handy-man {
@@ -63,6 +62,7 @@ body {
   border: 1px solid var(--Secondary-Teal-500, #14b8a6);
   background: var(--Secondary-Teal-500, #14b8a6);
   box-shadow: 0px 2px 6px 0px rgba(16, 24, 40, 0.06);
+  cursor: pointer;
 }
 
 /* Map Container */
@@ -87,14 +87,55 @@ body {
   font-weight: 800;
   line-height: 44px;
   letter-spacing: -0.72px;
+  padding: 25px;
 }
 
 .map-text-box p {
   font-size: 16px;
-  font-weight: 400;
   line-height: 24px;
+  padding-left: 25px;
 }
 
 .map-footer {
-    padding-top: 48px;
+  padding-top: 48px;
 }
+
+.linkCTA {
+  text-decoration: none;
+}
+
+/* DIY Section */
+.DIY-container {
+  display: flex;
+  align-items: center;
+  width: 1216px;
+  gap: 32px;
+}
+
+.DIY-text-box {
+  width: calc(50% - 32px);
+}
+
+.DIY-text-box h1 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 44px;
+  letter-spacing: -0.72px;
+}
+
+.DIY-text-box p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.DIY-footer {
+  padding-top: 48px;
+}
+
+.handy-lady {
+  width: 592px;
+  height: 500px;
+  float: right;
+}
+
+/* Budget Section */

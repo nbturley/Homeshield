@@ -1,11 +1,44 @@
 // import Nav from "../../Components/Nav/Nav";
 import "./Homepage.css";
-import { FcCheckmark } from "react-icons/fc";
+import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 const Homepage = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px", // Set rootMargin to a valid value
+      threshold: 0.5, // Trigger when 50% of the video is in the viewport
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Check if videoRef.current is not null
+          if (videoRef.current !== null) {
+            // Play the video when it becomes visible
+            (videoRef.current as HTMLVideoElement).play();
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    if (videoRef.current !== null) {
+      observer.observe(videoRef.current); // Pass a valid DOM element to observe
+    }
+
+    return () => {
+      observer.disconnect(); // Clean up the observer when component unmounts
+    };
+  }, []);
+
   return (
     <>
       {/* <Nav /> */}
+      {/* Top Section */}
       <div className="top-container">
         <div className="text-box">
           <h6>BECOME A CONFIDENT HOMEOWNER</h6>
@@ -14,22 +47,21 @@ const Homepage = () => {
             Get your free personalized checklist and feel confident your home is
             in great shape.
           </p>
-          <button className="CTA">Get to-do list</button>
+          <Link to={"/questions1"} className="linkCTA">
+            <button className="CTA">Get to-do list</button>
+          </Link>
         </div>
 
         <img
           className="handy-man"
-          src="src\Images\3e86420f31101548936a3397e833fdab.jpg"
+          src="src\Images\HandyMan.jpg"
           alt="handy man holding a tool box"
         />
       </div>
 
+      {/* Map Section */}
       <div className="map-container">
-        <img
-          className="US-map"
-          src="src\Images\d955c2d4de3453676d8a85ec76cb2d31.png"
-          alt="US map"
-        />
+        <img className="US-map" src="src\Images\USMap.png" alt="US map" />
 
         <div className="map-text-box">
           <h1>Get the right maintenance advice for where you live</h1>
@@ -44,9 +76,9 @@ const Homepage = () => {
               <path
                 d="M5 13.5L9 17.5L19 7.5"
                 stroke="#22C55E"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             <strong>Climate-Smart Schedules:</strong> No more guessing when to
@@ -65,9 +97,9 @@ const Homepage = () => {
               <path
                 d="M5 13.5L9 17.5L19 7.5"
                 stroke="#22C55E"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             <strong>Local Resources:</strong> Our pro network understands the
@@ -86,19 +118,107 @@ const Homepage = () => {
               <path
                 d="M5 13.5L9 17.5L19 7.5"
                 stroke="#22C55E"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
-            <strong>Peace of Mind:</strong> Whether you're in a sunny suburb or a
-            bustling city, we'll guide you through home upkeep specific to your
-            needs.
+            <strong>Peace of Mind:</strong> Whether you're in a sunny suburb or
+            a bustling city, we'll guide you through home upkeep specific to
+            your needs.
           </p>
 
-          <p className="map-footer">Our app takes the complexity out of home maintenance by delivering a personalized plan based on your exact location.</p>
+          <p className="map-footer">
+            Our app takes the complexity out of home maintenance by delivering a
+            personalized plan based on your exact location.
+          </p>
         </div>
       </div>
+
+      {/* DIY Section  */}
+      <div className="DIY-container">
+        <div className="DIY-text-box">
+          <h1>DIY made easy, no matter your skill level</h1>
+
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M5 13.5L9 17.5L19 7.5"
+                stroke="#22C55E"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <strong>Confidence Builder:</strong> Our videos are tailored to your
+            chosen difficulty level, from total beginner to experienced DIYer.
+          </p>
+
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M5 13.5L9 17.5L19 7.5"
+                stroke="#22C55E"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <strong>No More Frustration:</strong> Clear, step-by-step
+            instructions with proven techniques to ensure your project is a
+            success.
+          </p>
+
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M5 13.5L9 17.5L19 7.5"
+                stroke="#22C55E"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <strong>Prepared and Organized:</strong> Every video includes a
+            complete materials list, so you're not scrambling mid-project.
+          </p>
+
+          <p className="DIY-footer">
+            Learn how to tackle home maintenance like a pro with our library of
+            instructional videos designed to support you every step of the way.
+          </p>
+        </div>
+
+        <video
+          ref={videoRef}
+          className="handy-lady"
+          src="src/Images/HandyLady.mp4"
+          muted
+          loop
+          playsInline
+          controls
+        />
+      </div>
+
+      {/* Budget Section */}
     </>
   );
 };
