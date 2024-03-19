@@ -1,0 +1,9 @@
+nav {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #1f1b1d;
+    font-size: large;
+  }

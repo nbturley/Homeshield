@@ -1,6 +1,11 @@
+// import Nav from "../../Components/Nav/Nav";
+
 const Homepage = () => {
   return (
-    <div>Homepage</div>
-  )
+    <>
+      {/* <Nav /> */}
+      <h1>Homeshield</h1>
+      </>
+  );
 }
 export default Homepage
