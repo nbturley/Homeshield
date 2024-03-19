@@ -1,23 +1,20 @@
 *{
     font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings:
-      "slnt" 0;
 }
 
-body {
+/* body {
     background-color: grey;
     align-items: center;
     display: flex;
     justify-content: center;
     height: 100vh;
-}
-h1 h2 h3{
-    color: black;
-}
+} */
 
-.form-container {
+/* h1 h2 h3{
+    color: black;
+} */
+
+/* .form-container {
     background-color: azure;
     border-radius: 10px;
     box-sizing: border-box;
@@ -25,9 +22,9 @@ h1 h2 h3{
     min-height: 400px;
     padding: 20px;
     width: 370px;
-}
+} */
 
-input {
+/* input {
     background-color: #fff;
     border-radius: 5px;
     box-sizing: border-box;
@@ -67,4 +64,4 @@ input {
     background-color: #fff;
     color: black;
     border: 1px solid black;
-}
+} */

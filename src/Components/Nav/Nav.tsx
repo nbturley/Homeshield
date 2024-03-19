@@ -8,8 +8,6 @@ const Nav = () => {
         <Link to={"/"} className="title">
           Homeshield
         </Link>
-    
-
         <ul>
           <li>
             <NavLink to={"/questions1"}>Questions 1</NavLink>
@@ -28,6 +26,8 @@ const Nav = () => {
           </li>
         </ul>
       </nav>
+
+      
   </>
   );
 };
