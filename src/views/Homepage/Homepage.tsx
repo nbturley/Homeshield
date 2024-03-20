@@ -221,15 +221,13 @@ const Homepage = () => {
       {/* Budget Section */}
       <div className="budget-container">
         <div className="iPad">
-          <img className="iPad-img" src="src/Images/iPad Air Portrait.png" alt="iPad" />
           <img
-            src="src/Images/Ellipse (1).png"
-            className="ellipse1"
+            className="iPad-img"
+            src="src/Images/iPad Air Portrait.png"
+            alt="iPad"
           />
-          <img
-            src="src/Images/Ellipse copy.png"
-            className="ellipseCopy"
-          />
+          <img src="src/Images/Ellipse (1).png" className="ellipse1" />
+          <img src="src/Images/Ellipse copy.png" className="ellipseCopy" />
         </div>
 
         <div className="budget-text-box">
@@ -301,6 +299,65 @@ const Homepage = () => {
           </p>
         </div>
       </div>
+
+      {/* CTA Section */}
+
+      <div className="CTA-container">
+        <div className="CTA-text-box">
+          <h1 className="CTA-header">Stress-Free Home? Yes, Please!</h1>
+          <p className="CTA-paragraph">
+            Let us guide you through essential upkeep, so you can relax and
+            enjoy your home.
+          </p>
+          <Link to={"/questions1"} className="linkCTA">
+            <button className="CTA">Show Me How</button>
+          </Link>
+        </div>
+        </div>
+
+        {/* Popular Task Section */}
+        <div className="popular-task">
+          <h1 className="pop-task">Popular Task:</h1>
+          <div className="task-list">
+
+        </div>
+        </div>
+
+{/* Bottom Container */}
+<div className="bottom-container">
+        <div className="bottom-text-box">
+          <h1 className="bottom-header">Looking for something more specific?</h1>
+          <p className="bottom-paragraph">
+          Get a clear plan of what to do and when, customized just for you.
+          </p>
+          <Link to={"/questions1"} className="linkCTA">
+            <button className="CTA">Get Started</button>
+          </Link>
+        </div>
+        </div>
+        
+        {/* Footer  */}
+        <div className="footer">
+          <ul>
+            <li>Homeshield</li>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <li>About us</li>
+            <li>Contact</li>
+            <li>Data Policy</li>
+            <li>Terms</li>
+            <li>Privacy</li>
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <li>© 2024 HomeShield. All rights reserved.</li>
+          </ul>
+        </div>
+      
     </>
   );
 };
