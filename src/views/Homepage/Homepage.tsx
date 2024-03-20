@@ -219,6 +219,88 @@ const Homepage = () => {
       </div>
 
       {/* Budget Section */}
+      <div className="budget-container">
+        <div className="iPad">
+          <img className="iPad-img" src="src/Images/iPad Air Portrait.png" alt="iPad" />
+          <img
+            src="src/Images/Ellipse (1).png"
+            className="ellipse1"
+          />
+          <img
+            src="src/Images/Ellipse copy.png"
+            className="ellipseCopy"
+          />
+        </div>
+
+        <div className="budget-text-box">
+          <h1>Smart budgeting for home maintenance</h1>
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M5 13.5L9 17.5L19 7.5"
+                stroke="#22C55E"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <strong>Know Before You Start:</strong> Get detailed cost estimates
+            for each task, including materials and potential labor expenses.
+          </p>
+
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M5 13.5L9 17.5L19 7.5"
+                stroke="#22C55E"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <strong>Informed Decisions:</strong> Compare DIY costs with prices
+            from vetted contractors in your area.
+          </p>
+
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M5 13.5L9 17.5L19 7.5"
+                stroke="#22C55E"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <strong>Control Your Spending:</strong> See where you can save money
+            by tackling projects yourself, and know when hiring a pro is the
+            wiser choice.
+          </p>
+
+          <p className="budget-footer">
+            Take the guesswork out of home maintenance costs and make confident
+            budgeting decisions with our comprehensive cost estimator.
+          </p>
+        </div>
+      </div>
     </>
   );
 };

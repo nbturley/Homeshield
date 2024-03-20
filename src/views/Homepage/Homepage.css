@@ -13,7 +13,7 @@ body {
   width: 1216px;
   flex-shrink: 0;
   gap: 32px;
-  padding: 96px 0px 87px 0px;
+  padding: 32px 112px;
   background-color: #e5e7eb;
 }
 
@@ -72,7 +72,7 @@ body {
   width: 1216px;
   flex-shrink: 0;
   gap: 32px;
-  padding: 96px 0px 87px 0px;
+  padding: 80px 32px 70px 32px;
   background-color: #f9fafb;
 }
 
@@ -110,6 +110,7 @@ body {
   align-items: center;
   width: 1216px;
   gap: 32px;
+  padding: 32px 112px;
 }
 
 .DIY-text-box {
@@ -139,3 +140,62 @@ body {
 }
 
 /* Budget Section */
+.budget-container {
+  display: flex;
+  align-items: center;
+  width: 1216px;
+  gap: 32px;
+  padding: 32px 112px;
+  border: 5px solid green;
+  position: relative; /* Ensure the container has relative positioning */
+  width: max-content;
+}
+
+.iPad {
+  position: absolute; 
+  top: 50%; 
+  left: 15%; 
+  display: flex;
+  align-items:flex-start;
+  justify-content: flex-start;
+}
+
+.iPad-img {
+  z-index: 2; 
+}
+
+.ellipse1,
+.ellipseCopy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ellipse1 {
+  z-index: 1;
+}
+
+.ellipseCopy {
+  z-index: 0; 
+}
+
+
+.budget-text-box h1 {
+  color: #111827;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 44px;
+  letter-spacing: -0.72px;
+  padding: 25px;
+}
+
+.budget-text-box p {
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 25px;
+}
+
+.budget-footer {
+  padding-top: 48px;
+}
