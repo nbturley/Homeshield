@@ -3,7 +3,25 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
-    background-color: #1f1b1d;
-    font-size: large;
+  }
+
+  .title {
+    margin-right: 150px;
+    font-weight: bold;
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.48px;
+    text-decoration: none;
+  }
+
+li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 20px;
+    color: #111827;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
   }

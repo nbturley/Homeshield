@@ -226,8 +226,13 @@ const Homepage = () => {
             src="src/Images/iPad Air Portrait.png"
             alt="iPad"
           />
-          <div><img src="src/Images/Ellipse (1).png" className="ellipse1" /></div>
-          <div> <img src="src/Images/Ellipse copy.png" className="ellipseCopy" /></div>
+          <div>
+            <img src="src/Images/Ellipse (1).png" className="ellipse1" />
+          </div>
+          <div>
+            {" "}
+            <img src="src/Images/Ellipse copy.png" className="ellipseCopy" />
+          </div>
         </div>
 
         <div className="budget-text-box">
@@ -317,7 +322,28 @@ const Homepage = () => {
       {/* Popular Task Section */}
       <div className="popular-task">
         <h1 className="pop-task">Popular Task:</h1>
-        <div className="task-list"></div>
+        <div className="task-list">
+          <img src="src\Images\TasksCards.png"/>
+          <img src="src\Images\TasksCards2.png"/>
+          {/* <div className="card">
+            <img className="card-img" src="src/Images/HVAC.png" alt="HVAC" />
+            <div className="card-text-box">
+              <h5>
+                Change your HVAC air filters, breath easier and save electricity
+              </h5>
+              <p>
+                Swap out dirty HVAC filters for improved indoor air quality,
+                better airflow, and lower energy bills.
+              </p>
+              <p className="DIY-badges">
+                DIY level: <img src="src\Images\BeginnerBadge.png"/>
+                <p className="Category-badges">
+                DIY level: <img src="src\Images\BeginnerBadge.png"/>
+              </p>
+              </p>
+            </div>
+          </div> */}
+        </div>
       </div>
 
       {/* Bottom Container */}
