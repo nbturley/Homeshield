@@ -226,8 +226,8 @@ const Homepage = () => {
             src="src/Images/iPad Air Portrait.png"
             alt="iPad"
           />
-          <img src="src/Images/Ellipse (1).png" className="ellipse1" />
-          <img src="src/Images/Ellipse copy.png" className="ellipseCopy" />
+          <div><img src="src/Images/Ellipse (1).png" className="ellipse1" /></div>
+          <div> <img src="src/Images/Ellipse copy.png" className="ellipseCopy" /></div>
         </div>
 
         <div className="budget-text-box">

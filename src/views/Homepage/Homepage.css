@@ -146,22 +146,15 @@ body {
   align-items: center;
   gap: 32px;
   padding: 80px 32px;
-  border: 5px solid green;
   position: relative;
-  width: max-content;
 }
 
 .iPad {
-  position: absolute;
-  left: 15%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  position: relative;
 }
 
 .iPad-img {
   height: 529px;
-  flex: 1 0 0;
   z-index: 2;
 }
 
@@ -174,11 +167,17 @@ body {
 }
 
 .ellipse1 {
-  z-index: 1;
+  z-index: -1;
 }
 
 .ellipseCopy {
-  z-index: 0;
+  z-index: -2;
+}
+
+.budget-text-box {
+  position: absolute;
+  left: 20%;
+  margin-left: 361px; 
 }
 
 .budget-text-box h1 {
@@ -187,13 +186,11 @@ body {
   font-weight: 800;
   line-height: 44px;
   letter-spacing: -0.72px;
-  padding: 25px;
 }
 
 .budget-text-box p {
   font-size: 16px;
   line-height: 24px;
-  padding-left: 25px;
 }
 
 .budget-footer {
