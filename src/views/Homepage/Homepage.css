@@ -14,7 +14,7 @@ body {
   flex-shrink: 0;
   gap: 32px;
   padding: 80px 32px 70px 32px;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
 }
 
 .handy-man {
@@ -73,7 +73,7 @@ body {
   flex-shrink: 0;
   gap: 32px;
   padding: 80px 32px 70px 32px;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
 }
 
 .US-map {
@@ -142,12 +142,12 @@ body {
 /* Budget Section */
 .budget-container {
   display: flex;
-  align-items: center;
   width: 1216px;
+  align-items: center;
   gap: 32px;
-  padding: 32px 112px;
+  padding: 80px 32px;
   border: 5px solid green;
-  position: relative; /* Ensure the container has relative positioning */
+  position: relative;
   width: max-content;
 }
 
@@ -207,7 +207,7 @@ body {
   padding: 60px 32px 60px 32px;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
 }
 
 .CTA-text-box {
@@ -235,7 +235,7 @@ body {
 }
 
 /* Popular Task Section */
-.popular-task{
+.popular-task {
   width: 1216px;
   padding: 60px 32px 60px 32px;
 }
@@ -258,7 +258,6 @@ body {
   gap: 64px;
 }
 
-
 /* Bottom Container */
 .bottom-container {
   display: flex;
@@ -266,7 +265,7 @@ body {
   padding: 60px 32px 60px 32px;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
 }
 
 .bottom-text-box {
@@ -294,3 +293,32 @@ body {
 }
 
 /* Footer */
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.footer-header {
+  margin-right: 150px;
+  font-weight: bold;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.48px;
+  text-decoration: none;
+}
+
+.footer ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 30px;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.rights {
+  margin-left: 50px;
+}
