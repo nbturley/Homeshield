@@ -1,20 +1,27 @@
-import './App.css'
+import "./index.css";
+import { Route, Routes } from 'react-router-dom';
+import Nav from "./Components/Nav/Nav";
+import Homepage from "./views/Homepage/Homepage";
+import Questions1 from "./views/Questions/Questions1";
+import Questions2 from "./views/Questions/Questions2";
+import Questions3 from "./views/Questions/Questions3";
+import Dashboard from "./views/Dashboard/Dashboard";
+
 
 function App() {
-  
 
   return (
     <>
-     <h1>Welcome to Homeshield!</h1>
-     <h2>Building tools to make home maintenance a little less of a headache!</h2>
-     <h2>Created by:</h2>
-     <h3>Product Manager: Kat King</h3>
-     <h3>Designer: Polina Vinnikova</h3>
-     <h3>Software Developer: Nathanael Turley</h3>
-     <h3>Software Developer: Adrienne Daniels</h3>
-        
-    </>
-  )
+    <Nav />
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/questions1" element={<Questions1 />} />
+      <Route path="/questions2" element={<Questions2 />} />
+      <Route path="/questions3" element={<Questions3 />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  </>
+);
 }
 
-export default App
+export default App;
