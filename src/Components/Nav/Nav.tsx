@@ -5,10 +5,11 @@ const Nav = () => {
   return (
     <>
       <nav>
-        <Link to={"/"} className="title">
-          Homeshield
-        </Link>
+       
         <ul>
+          <li> <Link to={"/"} className="title">
+          Homeshield
+        </Link></li>
           <li>
             <NavLink to={"/questions1"}>Questions 1</NavLink>
           </li>
