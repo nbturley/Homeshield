@@ -1,5 +1,6 @@
 // import Nav from "../../Components/Nav/Nav";
 import "./Homepage.css";
+import {HandyMan, USMap, HandyLady, iPadAir, EllipsesBig, EllipsesSmall, TasksCards, TasksCards2} from "../../Images";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
@@ -54,14 +55,14 @@ const Homepage = () => {
 
         <img
           className="handy-man"
-          src="src\Images\HandyMan.jpg"
+          src={HandyMan}
           alt="handy man holding a tool box"
         />
       </div>
 
       {/* Map Section */}
       <div className="map-container">
-        <img className="US-map" src="src\Images\USMap.png" alt="US map" />
+        <img className="US-map" src={USMap} alt="US map" />
 
         <div className="map-text-box">
           <h1>Get the right maintenance advice for where you live</h1>
@@ -210,7 +211,7 @@ const Homepage = () => {
         <video
           ref={videoRef}
           className="handy-lady"
-          src="src/Images/HandyLady.mp4"
+          src={HandyLady}
           muted
           loop
           playsInline
@@ -223,15 +224,15 @@ const Homepage = () => {
         <div className="iPad">
           <img
             className="iPad-img"
-            src="src/Images/iPad Air Portrait.png"
+            src={iPadAir}
             alt="iPad"
           />
           <div>
-            <img src="src/Images/Ellipse (1).png" className="ellipse1" />
+            <img src={EllipsesBig} className="ellipse1" />
           </div>
           <div>
             {" "}
-            <img src="src/Images/Ellipse copy.png" className="ellipseCopy" />
+            <img src={EllipsesSmall} className="ellipseCopy" />
           </div>
         </div>
 
@@ -323,26 +324,8 @@ const Homepage = () => {
       <div className="popular-task">
         <h1 className="pop-task">Popular Task:</h1>
         <div className="task-list">
-          <img src="src\Images\TasksCards.png"/>
-          <img src="src\Images\TasksCards2.png"/>
-          {/* <div className="card">
-            <img className="card-img" src="src/Images/HVAC.png" alt="HVAC" />
-            <div className="card-text-box">
-              <h5>
-                Change your HVAC air filters, breath easier and save electricity
-              </h5>
-              <p>
-                Swap out dirty HVAC filters for improved indoor air quality,
-                better airflow, and lower energy bills.
-              </p>
-              <p className="DIY-badges">
-                DIY level: <img src="src\Images\BeginnerBadge.png"/>
-                <p className="Category-badges">
-                DIY level: <img src="src\Images\BeginnerBadge.png"/>
-              </p>
-              </p>
-            </div>
-          </div> */}
+          <img src={TasksCards}/>
+          <img src={TasksCards2}/>
         </div>
       </div>
 
