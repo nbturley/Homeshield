@@ -3,6 +3,7 @@ import "./Homepage.css";
 import {HandyMan, USMap, HandyLady, iPadAir, EllipsesBig, EllipsesSmall, TasksCards, TasksCards2} from "../../Images";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
+import Nav from "../../Components/Nav/Nav";
 
 const Homepage = () => {
   const videoRef = useRef(null);
@@ -38,7 +39,7 @@ const Homepage = () => {
 
   return (
     <>
-      {/* <Nav /> */}
+      <Nav />
       {/* Top Section */}
       <div className="top-container">
         <div className="text-box">

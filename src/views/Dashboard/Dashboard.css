@@ -1,0 +1,47 @@
+.Welcome-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 10px;
+  }
+  
+  .Welcome {
+    color: #111827;
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.72px;
+  }
+  
+  .Personal-Plan {
+    color: #374151;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  .PDF-Download {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Task Cards */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Changed to allow three columns */
+    gap: 10px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img {
+    width: 100%; /* Removed height and border styles */
+    border-radius: 10px;
+    object-fit: cover; /* Use cover to make sure the image fills the container */
+    background-color: #fff;
+  }
