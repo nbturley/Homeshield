@@ -87,6 +87,9 @@ const Questions1 = () => {
       <div className="form-container">
         <h2>Type of property</h2>
         <form onSubmit={handleFormSubmit}>
+          <div className="property-type">
+          <div className="home-type-container">
+          <div className="input-row">
           <input
             className="home-type"
             type="radio"
@@ -99,10 +102,16 @@ const Questions1 = () => {
           {question1Error && (
             <div className="error-message">Answer is required.</div>
           )}
+          </div>
+          <div className="p-row">
           <p className="home-def">
             Standalone home with a yard. You're responsible for all upkeep.
           </p>
-
+          </div>
+          </div>
+         
+          <div className="home-type-container">
+            <div className="input-row">
           <input
             className="home-type"
             type="radio"
@@ -115,10 +124,16 @@ const Questions1 = () => {
           {question1Error && (
             <div className="error-message">Answer is required.</div>
           )}
+          </div>
+          <div className="p-row">
           <p className="home-def">
             Own your unit, share common areas with neighbors.
           </p>
+          </div>
+          </div>
 
+          <div className="home-type-container">
+          <div className="input-row">
           <input
             className="home-type"
             type="radio"
@@ -133,9 +148,14 @@ const Questions1 = () => {
           {question1Error && (
             <div className="error-message">Answer is required.</div>
           )}
+          </div>
+           <div className="p-row">
           <p className="home-def">
             Rented unit, landlord handles most maintenance.
           </p>
+         </div>
+         </div>
+         </div>
 
           <h2>Amenities</h2>
           <input

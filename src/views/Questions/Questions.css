@@ -3,7 +3,6 @@
   flex-direction: column;
   color: #000;
   padding: 1px 236px 191px 236px;
-  border: 5px solid black;
 }
 
 .back-arrow {
@@ -46,13 +45,34 @@
   width: auto;
 }
 
+.property-type {
+  display: flex;
+  flex-direction: row;
+  gap: 10px
+}
+
+.home-type-container{
+  display: flex;
+  flex-direction:column;
+  margin-bottom: 20px;
+
+}
+
 .question-labels {
   color: #000;
 }
 
-.home-type {
-  display: inline-block;
+.input-row {
+ display: flex;
+ align-items: center;
+}
+
+.input-row label {
   margin-right: 10px;
+}
+
+.p-row {
+  margin-left: 20px;
 }
 
 .home-def {
