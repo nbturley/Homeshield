@@ -1,9 +1,12 @@
 import "./Questions.css";
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Questions1 = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     question1: "choice",
     washer: false,
@@ -14,22 +17,29 @@ const Questions1 = () => {
     question4: false,
   });
 
-  // Creating different state variables for the error instead of an object
+  // Error message state
   const [question1Error, setQuestion1Error] = useState(false);
 
+  // Load cached form data if available
   useEffect(() => {
-    // Load cached form data if available
     const cachedFormData = JSON.parse(localStorage.getItem("formData") || "{}");
     setFormData(cachedFormData);
   }, []);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, checked, type } = event.target;
+    const { name, checked, type, value } = event.target;
 
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : event.target.value,
-    });
+    if (type === "checkbox") {
+      setFormData({
+        ...formData,
+        [name]: checked,
+      });
+    } else if (type === "radio") {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleFormSubmit = (event: FormEvent) => {
@@ -50,10 +60,13 @@ const Questions1 = () => {
     if (isFormValid) {
       //Form submission logic here
       alert("Form submitted successfully!");
+      navigate("/dashboard")
     } else {
       alert("Form submission failed. Please fill in all required fields.");
     }
+  
   };
+
 
   return (
     <>
@@ -74,7 +87,6 @@ const Questions1 = () => {
       <div className="form-container">
         <h2>Type of property</h2>
         <form onSubmit={handleFormSubmit}>
-          <label className="question-labels">House</label>
           <input
             className="home-type"
             type="radio"
@@ -83,12 +95,14 @@ const Questions1 = () => {
             checked={formData.question1 === "house"}
             onChange={() => setFormData({ ...formData, question1: "house" })}
           />
+          <label className="question-labels">House</label>
           {question1Error && (
             <div className="error-message">Answer is required.</div>
           )}
-          <p>Standalone home with a yard. You're responsible for all upkeep.</p>
+          <p className="home-def">
+            Standalone home with a yard. You're responsible for all upkeep.
+          </p>
 
-          <label className="question-labels">Condo</label>
           <input
             className="home-type"
             type="radio"
@@ -97,12 +111,14 @@ const Questions1 = () => {
             checked={formData.question1 === "condo"}
             onChange={() => setFormData({ ...formData, question1: "condo" })}
           />
+          <label className="question-labels">Condo</label>
           {question1Error && (
             <div className="error-message">Answer is required.</div>
           )}
-          <p>Own your unit, share common areas with neighbors.</p>
+          <p className="home-def">
+            Own your unit, share common areas with neighbors.
+          </p>
 
-          <label className="question-labels">Apartment</label>
           <input
             className="home-type"
             type="radio"
@@ -113,54 +129,76 @@ const Questions1 = () => {
               setFormData({ ...formData, question1: "apartment" })
             }
           />
+          <label className="question-labels">Apartment</label>
           {question1Error && (
             <div className="error-message">Answer is required.</div>
           )}
-          <p>Rented unit, landlord handles most maintenance.</p>
+          <p className="home-def">
+            Rented unit, landlord handles most maintenance.
+          </p>
 
           <h2>Amenities</h2>
-          <label className="question-labels">Washer:</label>
           <input
             type="checkbox"
             name="washer"
             checked={formData.washer}
             onChange={handleChange}
           />
-          <label className="question-labels">Dryer:</label>
+          <label className="question-labels">Washer</label>
+
+          <br></br>
+
           <input
             type="checkbox"
             name="dryer"
             checked={formData.dryer}
             onChange={handleChange}
           />
-          <label className="question-labels">Dishwasher:</label>
+          <label className="question-labels">Dryer</label>
+
+          <br></br>
+
           <input
             type="checkbox"
             name="dishwasher"
             checked={formData.dishwasher}
             onChange={handleChange}
           />
-          <label className="question-labels">Carpet:</label>
+          <label className="question-labels">Dishwasher</label>
+
+          <br></br>
           <input
             type="checkbox"
             name="carpet"
             checked={formData.carpet}
             onChange={handleChange}
           />
+          <label className="question-labels">Carpet</label>
+
           <h2>Special requirements</h2>
-          <label className="question-labels">
+          <label className="question-labels" id="toggle-container">
             Do you have outdoor areas to maintain?
+            <div className="toggle-switch">
+              <div className="toggle-handle"></div>
+            </div>
           </label>
           <input
+            className="special-req"
             type="checkbox"
             name="question3"
             checked={formData.question3}
             onChange={handleChange}
           />
-          <label className="question-labels">
+
+          <br></br>
+          <label className="question-labels" id="toggle-container">
             Do you have a garbage disposal?
+            <div className="toggle-switch">
+              <div className="toggle-handle"></div>
+            </div>
           </label>
           <input
+            className="special-req"
             type="checkbox"
             name="question4"
             checked={formData.question4}
