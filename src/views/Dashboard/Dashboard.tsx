@@ -19,7 +19,7 @@ const Dashboard = () => {
   <h1 className="Welcome">Welcome!</h1>
   <p className="Personal-Plan">Your personalized home plan is ready</p>
  <button className="PDF-Download"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M3 13.5L3 14.375C3 15.8248 4.17525 17 5.625 17L14.375 17C15.8247 17 17 15.8248 17 14.375L17 13.5M13.5 10L10 13.5M10 13.5L6.5 10M10 13.5L10 3.00003" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M3 13.5L3 14.375C3 15.8248 4.17525 17 5.625 17L14.375 17C15.8247 17 17 15.8248 17 14.375L17 13.5M13.5 10L10 13.5M10 13.5L6.5 10M10 13.5L10 3.00003" stroke="#1F2937" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 </button>
 </div>
