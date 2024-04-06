@@ -21,11 +21,8 @@ const Nav = () => {
           <li>
             <NavLink to={""}>About</NavLink>
           </li>
-
-          <li>
-            <NavLink to={"/dashboard"}>Dashboard</NavLink>
-          </li>
         </ul>
+        
       </nav>
   </>
   );
