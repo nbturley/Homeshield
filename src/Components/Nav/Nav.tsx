@@ -5,20 +5,21 @@ const Nav = () => {
   return (
     <>
       <nav>
-        <Link to={"/"} className="title">
-          Homeshield
-        </Link>
+       
         <ul>
+          <li> <Link to={"/"} className="title">
+          Homeshield
+        </Link></li>
           <li>
-            <NavLink to={"/questions1"}>Questions 1</NavLink>
+            <NavLink to={""}>Services</NavLink>
           </li>
 
           <li>
-            <NavLink to={"/questions2"}>Questions 2</NavLink>
+            <NavLink to={""}>Task</NavLink>
           </li>
 
           <li>
-            <NavLink to={"/questions3"}>Questions 3 </NavLink>
+            <NavLink to={""}>About</NavLink>
           </li>
 
           <li>
@@ -26,8 +27,6 @@ const Nav = () => {
           </li>
         </ul>
       </nav>
-
-      
   </>
   );
 };
