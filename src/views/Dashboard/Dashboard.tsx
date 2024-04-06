@@ -2,9 +2,22 @@ import "./Dashboard.css"
 import { HVAC, Caulk, SmokeDetector, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge } from "../../Images";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
+import { useEffect } from "react";
 
 
 const Dashboard = () => {
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await fetch('https://homeshield-flask.onrender.com/api/list', {
+        method: 'POST',
+      });
+      
+      const data = await response.json();
+      console.log(data)
+  }
+    getData();
+  }, []);
 
   return (
  <>

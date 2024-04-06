@@ -217,7 +217,6 @@ const Questions1 = () => {
             Do you have outdoor areas to maintain?
             <div className="switch">
               <input
-                className="switch"
                 type="checkbox"
                 name="yard"
                 checked={formData.yard}
@@ -232,7 +231,6 @@ const Questions1 = () => {
             Do you have a garbage disposal?
             <div className="switch">
               <input
-                className="switch"
                 type="checkbox"
                 name="disposal"
                 checked={formData.disposal}

@@ -65,6 +65,14 @@
   letter-spacing: -0.4px;
 }
 
+.error-message {
+  color: red;
+}
+
+/* input {
+padding-bottom: 10px;
+} */
+
 .input-row {
  display: flex;
  align-items: center;
@@ -85,20 +93,11 @@
   line-height: 16px;
 }
 
-.special-req {
-  display: flex;
-  width: 931px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 26px;
-  display: none;
-}
-
 .switch {
   position: relative;
-  display: inline-block;
   width: 60px;
-  height: 34px;
+  float: inline-end;
+
 }
 
 .switch input {
@@ -147,7 +146,7 @@ input:checked + .slider:before {
   line-height: 18px;
   padding: 14px 20px;
   align-items: center;
-  margin: 35px auto;
+  margin: 65px auto;
   display: block;
   gap: 8px;
   border-radius: 8px;
