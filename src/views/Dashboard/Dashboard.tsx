@@ -3,21 +3,33 @@ import { HVAC, Caulk, SmokeDetector, BeginnerBadge, HVACBadge, SafetyBadge, Exte
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 const Dashboard = () => {
+ const location = useLocation();
+ const { formData } = location.state;
 
-  useEffect(() => {
-    const getData = async () => {
-      const response = await fetch('https://homeshield-flask.onrender.com/api/list', {
-        method: 'POST',
-      });
-      
-      const data = await response.json();
-      console.log(data)
-  }
-    getData();
-  }, []);
+ useEffect(() => {
+     const fetchData = async () => {
+       try {
+         const response = await fetch('https://homeshield-flask.onrender.com/api/list', {
+           method: 'POST',
+           body: JSON.stringify(formData),
+           headers: {
+             'Content-Type': 'application/json'
+           }
+         });
+ 
+         const data = await response.json();
+         console.log(data);
+       } catch (error) {
+         console.error('Error fetching data:', error);
+       }
+     };
+ 
+     fetchData();
+   }, [formData]);
 
   return (
  <>
