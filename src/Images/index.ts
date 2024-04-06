@@ -12,7 +12,9 @@ import SmokeDetector from "./SmokeDetector.png";
 import BeginnerBadge from "./BeginnerBadge.png";
 import HVACBadge from "./HVACBadge.png";
 import SafetyBadge from "./SafetyBadge.png";
-import ExteriorBadge from "./ExteriorBadge.png"
+import ExteriorBadge from "./ExteriorBadge.png";
+import VerifiedBadge from "./VerifiedBadge.png";
+import TopRatedBadge from "./TopRatedBadge.png"; 
 
 
-export {HandyMan, USMap, HandyLady, iPadAir, EllipsesBig, EllipsesSmall, TasksCards, TasksCards2, HVAC, Caulk, SmokeDetector, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge}
+export {HandyMan, USMap, HandyLady, iPadAir, EllipsesBig, EllipsesSmall, TasksCards, TasksCards2, HVAC, Caulk, SmokeDetector, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, VerifiedBadge, TopRatedBadge}

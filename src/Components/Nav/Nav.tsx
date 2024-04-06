@@ -21,6 +21,10 @@ const Nav = () => {
           <li>
             <NavLink to={""}>About</NavLink>
           </li>
+
+          <li>
+            <NavLink to={"/TaskPage"}>TaskPage</NavLink>
+          </li>
         </ul>
         
       </nav>
