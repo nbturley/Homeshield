@@ -4,17 +4,16 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 
 const Questions1 = () => {
-
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    question1: "choice",
+    homeType: "",
     washer: false,
     dryer: false,
     dishwasher: false,
     carpet: false,
-    question3: false,
-    question4: false,
+    yard: false,
+    disposal: false,
   });
 
   // Error message state
@@ -27,46 +26,59 @@ const Questions1 = () => {
   }, []);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, checked, type, value } = event.target;
+    const { name, checked, type } = event.target;
+
+    setFormData({
+      ...formData,
+      homeType: "house",
+    });
+
+    setFormData({
+      ...formData,
+      homeType: "condo",
+    });
+
+    setFormData({
+      ...formData,
+      homeType: "apartment",
+    });
 
     if (type === "checkbox") {
       setFormData({
         ...formData,
         [name]: checked,
       });
-    } else if (type === "radio") {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
     }
   };
 
   const handleFormSubmit = (event: FormEvent) => {
     event.preventDefault();
-    console.log(formData);
+    console.log(formData, "line 47");
 
     // Save form data to localStorage
     localStorage.setItem("formData", JSON.stringify(formData));
 
     // validate form input
-    let isFormValid = true;
+    let isFormValid = false;
 
-    if (formData.question1 === "choice") {
-      isFormValid = false;
+    if (
+      formData.homeType === "house" ||
+      formData.homeType === "condo" ||
+      formData.homeType === "apartment"
+    ) {
+      isFormValid = true;
+    } else {
       setQuestion1Error(true);
     }
 
     if (isFormValid) {
       //Form submission logic here
       alert("Form submitted successfully!");
-      navigate("/dashboard")
+      navigate("/dashboard", {state: {formData: formData}});
     } else {
       alert("Form submission failed. Please fill in all required fields.");
     }
-  
   };
-
 
   return (
     <>
@@ -88,74 +100,79 @@ const Questions1 = () => {
         <h2>Type of property</h2>
         <form onSubmit={handleFormSubmit}>
           <div className="property-type">
-          <div className="home-type-container">
-          <div className="input-row">
-          <input
-            className="home-type"
-            type="radio"
-            id="house"
-            name="question1"
-            checked={formData.question1 === "house"}
-            onChange={() => setFormData({ ...formData, question1: "house" })}
-          />
-          <label className="question-labels">House</label>
-          {question1Error && (
-            <div className="error-message">Answer is required.</div>
-          )}
-          </div>
-          <div className="p-row">
-          <p className="home-def">
-            Standalone home with a yard. You're responsible for all upkeep.
-          </p>
-          </div>
-          </div>
-         
-          <div className="home-type-container">
-            <div className="input-row">
-          <input
-            className="home-type"
-            type="radio"
-            id="condo"
-            name="question1"
-            checked={formData.question1 === "condo"}
-            onChange={() => setFormData({ ...formData, question1: "condo" })}
-          />
-          <label className="question-labels">Condo</label>
-          {question1Error && (
-            <div className="error-message">Answer is required.</div>
-          )}
-          </div>
-          <div className="p-row">
-          <p className="home-def">
-            Own your unit, share common areas with neighbors.
-          </p>
-          </div>
-          </div>
+            <div className="home-type-container">
+              <div className="input-row">
+                <input
+                  className="home-type"
+                  type="radio"
+                  id="house"
+                  name="question1"
+                  checked={formData.homeType === "house"}
+                  onChange={() =>
+                    setFormData({ ...formData, homeType: "house" })
+                  }
+                />
+                <label className="question-labels">House</label>
+                {question1Error && (
+                  <div className="error-message">Answer is required.</div>
+                )}
+              </div>
+              <div className="p-row">
+                <p className="home-def">
+                  Standalone home with a yard. You're responsible for all
+                  upkeep.
+                </p>
+              </div>
+            </div>
 
-          <div className="home-type-container">
-          <div className="input-row">
-          <input
-            className="home-type"
-            type="radio"
-            id="apartment"
-            name="question1"
-            checked={formData.question1 === "apartment"}
-            onChange={() =>
-              setFormData({ ...formData, question1: "apartment" })
-            }
-          />
-          <label className="question-labels">Apartment</label>
-          {question1Error && (
-            <div className="error-message">Answer is required.</div>
-          )}
+            <div className="home-type-container">
+              <div className="input-row">
+                <input
+                  className="home-type"
+                  type="radio"
+                  id="condo"
+                  name="question1"
+                  checked={formData.homeType === "condo"}
+                  onChange={() =>
+                    setFormData({ ...formData, homeType: "condo" })
+                  }
+                />
+                <label className="question-labels">Condo</label>
+                {question1Error && (
+                  <div className="error-message">Answer is required.</div>
+                )}
+              </div>
+              <div className="p-row">
+                <p className="home-def">
+                  Own your unit, share common areas with neighbors.
+                </p>
+              </div>
+            </div>
+
+            <div className="home-type-container">
+              <div className="input-row">
+                <input
+                  className="home-type"
+                  type="radio"
+                  id="apartment"
+                  name="question1"
+                  checked={formData.homeType === "apartment"}
+                  onChange={() =>
+                    setFormData({ ...formData, homeType: "apartment" })
+                  }
+                />
+                <label className="question-labels">Apartment</label>
+                {question1Error && (
+                  <div className="error-message">Answer is required.</div>
+                )}
+              </div>
+              <div className="p-row">
+                <p className="home-def">
+                  Rented unit, landlord handles most maintenance.
+                </p>
+              </div>
+            </div>
           </div>
-           <div className="p-row">
-          <p className="home-def">
-            Rented unit, landlord handles most maintenance.
-          </p>
-         </div>
-         </div>
-         </div>
 
           <h2>Amenities</h2>
           <input
@@ -196,34 +213,32 @@ const Questions1 = () => {
           <label className="question-labels">Carpet</label>
 
           <h2>Special requirements</h2>
-          <label className="question-labels" id="toggle-container">
+          <label className="question-labels">
             Do you have outdoor areas to maintain?
-            <div className="toggle-switch">
-              <div className="toggle-handle"></div>
+            <div className="switch">
+              <input
+                type="checkbox"
+                name="yard"
+                checked={formData.yard}
+                onChange={handleChange}
+              />
+              <span className="slider"></span>
             </div>
           </label>
-          <input
-            className="special-req"
-            type="checkbox"
-            name="question3"
-            checked={formData.question3}
-            onChange={handleChange}
-          />
 
           <br></br>
-          <label className="question-labels" id="toggle-container">
+          <label className="question-labels">
             Do you have a garbage disposal?
-            <div className="toggle-switch">
-              <div className="toggle-handle"></div>
+            <div className="switch">
+              <input
+                type="checkbox"
+                name="disposal"
+                checked={formData.disposal}
+                onChange={handleChange}
+              />
+              <span className="slider"></span>
             </div>
           </label>
-          <input
-            className="special-req"
-            type="checkbox"
-            name="question4"
-            checked={formData.question4}
-            onChange={handleChange}
-          />
 
           <button type="submit" className="form-btn">
             Next
