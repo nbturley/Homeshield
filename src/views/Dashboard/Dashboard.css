@@ -46,7 +46,7 @@ height: 20px;
 
 .card-img {
   width: 100%;
-  height: auto;
+  height: 60%;
   border-radius: 10px;
   object-fit: cover;
   background-color: #fff;

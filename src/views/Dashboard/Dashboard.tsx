@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import  { carpet_cleaning, change_hvac_filters }  from "../../Images";
+import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, SeasonalBadge, ApplianceBadge, ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, intermediateBadge, AdvanceBadge }  from "../../Images";
 
 interface Task {
   TaskImageURL: string;
@@ -13,13 +13,6 @@ interface Task {
   MaintenanceType: string;
   Frequency: string;
 };
-
-// const ImageNames: { [key: string]: string } = {
-//   "/src/Images/carpet_cleaning.jpg": carpet_cleaning,
-//   "/src/Images/change_hvac_filters.jpg": change_hvac_filters,
-// };
-
-console.log(carpet_cleaning);
 
 const Dashboard = () => {
  const location = useLocation();
@@ -72,12 +65,69 @@ useEffect(() => {
       
           <div key={index} className="card">
           {task.TaskImageURL === 'change_hvac_filters.jpg' && <img src={change_hvac_filters} alt={task.TaskName} className="card-img" />}
-            {task.TaskImageURL === 'roof_inspection.jpg' && <img src={carpet_cleaning} alt={task.TaskName} className="card-img" />}
-            
+            {task.TaskImageURL === 'carpet_cleaning.jpg' && <img src={carpet_cleaning} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'clean_dryer_vents.jpg' && <img src={clean_dryer_vents} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'dishwasher_maintenance.jpg' && <img src={dishwasher_maintenance} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'electrical_system_check.jpg' && <img src={electrical_system_check} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'exterior_painting.jpg' && <img src={exterior_painting} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'fire_safety_inspection.jpg' && <img src={fire_safety_inspection} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'garbage_disposal.jpg' && <img src={garbage_disposal} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'gutter_cleaning.jpg' && <img src={gutter_cleaning} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'lawn_garden_maintenance.jpg' && <img src={lawn_garden_maintenance} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'pest_control.jpg' && <img src={pest_control} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'pluming_repairs.jpg' && <img src={plumbing_repairs} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'pressureWash.jpg' && <img src={pressureWash} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'roof_inspection.jpg' && <img src={roof_inspection} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'washing_machine.jpg' && <img src={washing_machine} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'water_heater_flush.jpg' && <img src={water_heater_flush} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'plumbing_repairs.jpg' && <img src={plumbing_repairs} alt={task.TaskName} className="card-img" />}
+
+           
+              
             <div className="card-details">
               <h2>{task.TaskName}</h2>
-              <p className="DIY-badge"> DIY level: {task.TaskLevel}</p>
-              <p className="DIY-badge"> Category: {task.MaintenanceType}</p>
+              <p className="DIY-badge"> DIY level:   
+              {task.TaskLevel === "Beginner" && <img src={BeginnerBadge} alt={task.TaskLevel} />}
+              
+              {task.TaskLevel === "Intermediate" && <img src={intermediateBadge} alt={task.TaskLevel} />}
+
+              {task.TaskLevel === "Advanced" && <img src={AdvanceBadge} alt={task.TaskLevel} />}</p>
+        
+
+              <p className="DIY-badge"> Category: {task.MaintenanceType === "HVAC" && <img src={HVACBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Interior" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Plumbing" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Electrical" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Appliance" && <img src={ApplianceBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Exterior" && <img src={ExteriorBadge} alt={task.MaintenanceType} />}
+              
+              {task.MaintenanceType === "Pest Control" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Safety" && <img src={SafetyBadge} alt={task.MaintenanceType} />}
+              
+              </p>
+
+
               <p className="DIY-badge"> Repeat: {task.Frequency}</p>
             </div>
           </div>
