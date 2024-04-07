@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, SeasonalBadge, ApplianceBadge, ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, intermediateBadge, AdvanceBadge }  from "../../Images";
+import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, ApplianceBadge, intermediateBadge, AdvanceBadge }  from "../../Images";
+
+// Unused badges
+// ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, SeasonalBadge,
 
 interface Task {
   TaskImageURL: string;
