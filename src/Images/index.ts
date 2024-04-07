@@ -12,7 +12,9 @@ import SmokeDetector from "./SmokeDetector.png";
 import BeginnerBadge from "./BeginnerBadge.png";
 import HVACBadge from "./HVACBadge.png";
 import SafetyBadge from "./SafetyBadge.png";
-import ExteriorBadge from "./ExteriorBadge.png"
+import ExteriorBadge from "./ExteriorBadge.png";
+import VerifiedBadge from "./VerifiedBadge.png";
+import TopRatedBadge from "./TopRatedBadge.png";
 import IndoorBadge from "./ExteriorBadge.png";
 import SeasonalBadge from "./SeasonalBadge.png";
 import ApplianceBadge from "./ApplianceBadge.png";
@@ -40,4 +42,5 @@ import intermediateBadge from "./IntermediateBadge.png";
 import AdvanceBadge from "./AdvanceBadge.png"
 
 
-export {HandyMan, USMap, HandyLady, iPadAir, EllipsesBig, EllipsesSmall, TasksCards, TasksCards2, HVAC, Caulk, SmokeDetector, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, SeasonalBadge, ApplianceBadge, ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, intermediateBadge, AdvanceBadge }
+
+export {HandyMan, USMap, HandyLady, iPadAir, EllipsesBig, EllipsesSmall, TasksCards, TasksCards2, HVAC, Caulk, SmokeDetector, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, SeasonalBadge, ApplianceBadge, ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, intermediateBadge, AdvanceBadge, VerifiedBadge, TopRatedBadge }

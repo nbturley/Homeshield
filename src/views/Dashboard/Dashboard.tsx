@@ -98,7 +98,6 @@ useEffect(() => {
             {task.TaskImageURL === 'plumbing_repairs.jpg' && <img src={plumbing_repairs} alt={task.TaskName} className="card-img" />}
 
            
-              
             <div className="card-details">
               <h2>{task.TaskName}</h2>
               <p className="DIY-badge"> DIY level:   
