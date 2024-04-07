@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import  { carpet_cleaning, change_hvac_filters }  from "../../Images";
 
 interface Task {
   TaskImageURL: string;
@@ -11,7 +12,14 @@ interface Task {
   CostDiff: number;
   MaintenanceType: string;
   Frequency: string;
-}
+};
+
+// const ImageNames: { [key: string]: string } = {
+//   "/src/Images/carpet_cleaning.jpg": carpet_cleaning,
+//   "/src/Images/change_hvac_filters.jpg": change_hvac_filters,
+// };
+
+console.log(carpet_cleaning);
 
 const Dashboard = () => {
  const location = useLocation();
@@ -61,14 +69,16 @@ useEffect(() => {
 
 <div className="card-container">
     {tasks.map((task, index) => (
+      
           <div key={index} className="card">
-            <img src={task.TaskImageURL} alt="card image" className="card-img"/>
+          {task.TaskImageURL === 'change_hvac_filters.jpg' && <img src={change_hvac_filters} alt={task.TaskName} className="card-img" />}
+            {task.TaskImageURL === 'roof_inspection.jpg' && <img src={carpet_cleaning} alt={task.TaskName} className="card-img" />}
+            
             <div className="card-details">
               <h2>{task.TaskName}</h2>
               <p className="DIY-badge"> DIY level: {task.TaskLevel}</p>
               <p className="DIY-badge"> Category: {task.MaintenanceType}</p>
-              <p className="DIY-badge"> Frequency: {task.Frequency}</p>
-      
+              <p className="DIY-badge"> Repeat: {task.Frequency}</p>
             </div>
           </div>
         ))}
