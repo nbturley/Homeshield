@@ -2,8 +2,10 @@ import "./TaskPage.css";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { VerifiedBadge, TopRatedBadge } from "../../Images";
+import YouTubePlayer from "./VideoPlayer";
 
-const TaskPage = () => {
+const TaskPage: React.FC = () => {
+
   return (
     <>
       <div className="arrow-div">
@@ -12,6 +14,13 @@ const TaskPage = () => {
             <FaArrowLeft />
           </button>
         </Link>
+      </div>
+
+      <div className="left-div">
+        <div className="video-box">
+            <h1>Task Name</h1>
+            <YouTubePlayer videoId="ED3bfesbE_Y?si=ZzZMnRKjT4g-8iYo" />
+        </div>
       </div>
 
       <div className="right-div">
@@ -28,7 +37,6 @@ const TaskPage = () => {
         </div>
       </div>
 
-      <div className="left-div">Left Side</div>
     </>
   );
 };
