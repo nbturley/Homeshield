@@ -18,11 +18,18 @@
 }
 
 .left-div {
-  width: 70%;
+  width: 60%;
   position: absolute;
-  left: 15px;
+  left: 150px;
   height: 100%;
   border: 5px solid green;
+}
+
+.video-box {
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 50px; */
+  /* align-self: center; */
 }
 
 .right-div {

@@ -1,0 +1,18 @@
+/* VideoPlayer.css */
+.video-container {
+    position: relative;
+}
+
+.video-container video {
+    width: 749px;
+    height: 424.753px;
+    flex-shrink: 0;
+    border: 2.25px
+}
+
+.play-pause-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+}
