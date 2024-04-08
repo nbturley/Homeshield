@@ -74,7 +74,7 @@ const Questions1 = () => {
     if (isFormValid) {
       //Form submission logic here
       alert("Form submitted successfully!");
-      navigate("/dashboard");
+      navigate("/dashboard", {state: {formData: formData}});
     } else {
       alert("Form submission failed. Please fill in all required fields.");
     }

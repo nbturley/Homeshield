@@ -1,23 +1,49 @@
 import "./Dashboard.css"
-import { HVAC, Caulk, SmokeDetector, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge } from "../../Images";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, ApplianceBadge, intermediateBadge, AdvanceBadge }  from "../../Images";
 
+// Unused badges
+// ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, SeasonalBadge,
+
+interface Task {
+  TaskImageURL: string;
+  TaskName: string;
+  TaskLevel: string;
+  CostDiff: number;
+  MaintenanceType: string;
+  Frequency: string;
+};
 
 const Dashboard = () => {
+ const location = useLocation();
+ const [tasks, setTasks] = useState<Task[]>([]);
 
-  useEffect(() => {
+useEffect(() => {
     const getData = async () => {
-      const response = await fetch('https://homeshield-flask.onrender.com/api/list', {
-        method: 'POST',
-      });
-      
-      const data = await response.json();
-      console.log(data)
-  }
+      try {
+        const response = await fetch('https://homeshield-flask.onrender.com/api/list', {
+          method: 'POST',
+          body: JSON.stringify(location.state.formData),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        const data = await response.json();
+        setTasks(data);
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    if (location.state && location.state.formData) {
     getData();
-  }, []);
+    }
+  }, [location.state]);
 
   return (
  <>
@@ -38,43 +64,76 @@ const Dashboard = () => {
 </div>
 
 <div className="card-container">
-  <div className="card">
-    <img src={HVAC} alt="Card Image" className="card-img"/>
-    <div className="card-details">
-      <h2>Change your HVAC air filters</h2>
-      <p>Swap out dirty HVAC filters for improved indoor air quality, better airflow, and lower energy bills.</p>
-      <p className="DIY-badge">DIY level: <img src={BeginnerBadge} className="badge-img"/></p>
+    {tasks.map((task, index) => (
       
-      
-      <p className="DIY-category">Category: <img src={HVACBadge} className="badge-img"/></p>
-    </div>
-  </div>
+          <div key={index} className="card">
+          {task.TaskImageURL === 'change_hvac_filters.jpg' && <img src={change_hvac_filters} alt={task.TaskName} className="card-img" />}
+            {task.TaskImageURL === 'carpet_cleaning.jpg' && <img src={carpet_cleaning} alt={task.TaskName} className="card-img" />}
 
-  <div className="card">
-    <img src={Caulk} alt="Card Image" className="card-img"/>
-    <div className="card-details">
-      <h2>Caulk windows and doors to seal drafts</h2>
-      <p>Prevent heat loss, lower your energy bills, and keep pests out by caulking gaps around windows and doors.</p>
+            {task.TaskImageURL === 'clean_dryer_vents.jpg' && <img src={clean_dryer_vents} alt={task.TaskName} className="card-img" />}
 
-      <p className="DIY-badge">DIY level: <img src={BeginnerBadge} className="badge-img"/></p>
-      
-      
-      <p className="DIY-category">Category: <img src={SafetyBadge} className="badge-img"/></p>
-    </div>
-  </div>
+            {task.TaskImageURL === 'dishwasher_maintenance.jpg' && <img src={dishwasher_maintenance} alt={task.TaskName} className="card-img" />}
 
-  <div className="card">
-    <img src={SmokeDetector} alt="Card Image" className="card-img" />
-    <div className="card-details">
-      <h2>Test your smoke and CO detectors</h2>
-      <p>Test the batteries and functionality of your smoke and carbon monoxide detectors for peace of mind.</p>
+            {task.TaskImageURL === 'electrical_system_check.jpg' && <img src={electrical_system_check} alt={task.TaskName} className="card-img" />}
 
-      <p className="DIY-badge">DIY level: <img src={BeginnerBadge} className="badge-img"/></p>
-      
-      
-      <p className="DIY-category">Category: <img src={ExteriorBadge} className="badge-img"/></p>
-    </div>
-  </div>
+            {task.TaskImageURL === 'exterior_painting.jpg' && <img src={exterior_painting} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'fire_safety_inspection.jpg' && <img src={fire_safety_inspection} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'garbage_disposal.jpg' && <img src={garbage_disposal} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'gutter_cleaning.jpg' && <img src={gutter_cleaning} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'lawn_garden_maintenance.jpg' && <img src={lawn_garden_maintenance} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'pest_control.jpg' && <img src={pest_control} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'pluming_repairs.jpg' && <img src={plumbing_repairs} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'pressureWash.jpg' && <img src={pressureWash} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'roof_inspection.jpg' && <img src={roof_inspection} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'washing_machine.jpg' && <img src={washing_machine} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'water_heater_flush.jpg' && <img src={water_heater_flush} alt={task.TaskName} className="card-img" />}
+
+            {task.TaskImageURL === 'plumbing_repairs.jpg' && <img src={plumbing_repairs} alt={task.TaskName} className="card-img" />}
+
+           
+            <div className="card-details">
+              <h2>{task.TaskName}</h2>
+              <p className="DIY-badge"> DIY level:   
+              {task.TaskLevel === "Beginner" && <img src={BeginnerBadge} alt={task.TaskLevel} />}
+              
+              {task.TaskLevel === "Intermediate" && <img src={intermediateBadge} alt={task.TaskLevel} />}
+
+              {task.TaskLevel === "Advanced" && <img src={AdvanceBadge} alt={task.TaskLevel} />}</p>
+        
+
+              <p className="DIY-badge"> Category: {task.MaintenanceType === "HVAC" && <img src={HVACBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Interior" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Plumbing" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Electrical" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Appliance" && <img src={ApplianceBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Exterior" && <img src={ExteriorBadge} alt={task.MaintenanceType} />}
+              
+              {task.MaintenanceType === "Pest Control" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
+
+              {task.MaintenanceType === "Safety" && <img src={SafetyBadge} alt={task.MaintenanceType} />}
+              
+              </p>
+
+
+              <p className="DIY-badge"> Repeat: {task.Frequency}</p>
+            </div>
+          </div>
+        ))}
 </div>
 
  </>
