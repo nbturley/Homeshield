@@ -25,12 +25,43 @@
   border: 5px solid green;
 }
 
+.learn-how {
+color: #111827;
+font-size: 28px;
+font-weight: 700;
+line-height: 36px; 
+letter-spacing: -0.56px;
+}
+
 .video-box {
   display: flex;
   flex-direction: column;
   /* padding-left: 50px; */
   /* align-self: center; */
 }
+
+.what-you-need {
+  color:#111827;
+font-size: 24px;
+font-weight: 600;
+line-height: 32px;
+letter-spacing: -0.48px;
+}
+
+
+.DIY-or-pro {
+  color:  #111827;
+font-size: 24px;
+font-weight: 600;
+line-height: 32px; 
+letter-spacing: -0.48px;
+}
+
+.decision {
+  color: #6B7280;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px; }
 
 .right-div {
   width: 360px;
