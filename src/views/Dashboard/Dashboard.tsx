@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, ApplianceBadge, intermediateBadge, AdvanceBadge }  from "../../Images";
+import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, ApplianceBadge, intermediateBadge, AdvanceBadge, ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge  }  from "../../Images";
 
 // Unused badges
 // ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, SeasonalBadge,
@@ -130,7 +130,25 @@ useEffect(() => {
               </p>
 
 
-              <p className="DIY-badge"> Repeat: {task.Frequency}</p>
+              <p className="DIY-badge"> Repeat: {task.Frequency}
+              
+              {task.MaintenanceType === "Every 3 Months" && <img src={ThreeMonthsBadge} alt={task.Frequency} />}
+
+              {task.MaintenanceType === "Every Year" && <img src={YearBadge} alt={task.Frequency} />}
+           
+
+              {task.MaintenanceType === "Every 6 Months" && <img src={SixMonthsBadge} alt={task.Frequency} />}
+
+              {/* {task.MaintenanceType === "Every 2 Weeks" && <img src={} alt={task.Frequency} />} */}
+
+              {task.MaintenanceType === "Every 6-12 Months" && <img src={SixMonthsBadge} alt={task.Frequency} />}
+
+
+              {task.MaintenanceType === "Every 5-10 Years" && <img src={FiveYearBadge} alt={task.Frequency} />}
+{/* 
+              {task.MaintenanceType === "Every Month" && <img src={} alt={task.Frequency} />} */}
+      
+              </p>
             </div>
           </div>
         ))}
