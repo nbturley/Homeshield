@@ -1,7 +1,6 @@
 .arrow-div {
   display: flex;
   justify-content: flex-start;
-  border: 5px solid blue;
 }
 
 .task-back-arrow {
@@ -45,6 +44,32 @@
   align-items: center;
 }
 
+.add-button-div {
+  display: flex;
+  justify-content: flex-end; 
+  margin-top: 14px;
+  margin-right: 160px;
+  }
+
+.add-task {
+  display: flex;
+  height: 48px;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  color: #fff;
+  border: 1px solid #14b8a6;
+  background: #14b8a6;
+  box-shadow: 0px 2px 6px 0px rgba(16, 24, 40, 0.06);
+}
+
+.needs-div {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .what-you-need {
   color: #111827;
   font-size: 24px;
@@ -65,6 +90,10 @@
   font-weight: 400;
   line-height: 24px;
   margin-left: 16px;
+}
+
+.pro {
+  margin-bottom: 48px;
 }
 
 .DIY-or-pro {
@@ -170,7 +199,7 @@
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  border: 1px solid v #6366f1;
+  border: 1px solid #6366f1;
   background: #6366f1;
   color: #fff;
   float: right;
@@ -180,6 +209,23 @@
 
 .button-container {
   display: flex;
-  justify-content: flex-end; 
-  margin-top: 10px; 
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* Table */
+th {
+  border-bottom: 2px solid #374151;
+  text-align: left;
+  padding: 16px 0px 16px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+}
+
+td {
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  padding: 16px;
 }
