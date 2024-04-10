@@ -29,6 +29,7 @@ body {
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .text-box h1 {
@@ -40,12 +41,18 @@ body {
   letter-spacing: -1.04px;
 }
 
-.text-box p {
+.get-checklist {
   color: #374151;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 28px;
+}
+.about {
+  color: #374151;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .CTA {
@@ -248,7 +255,7 @@ body {
 
 .task-list {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 /* Will use for the cards on the Dashboard.tsx */

@@ -2,11 +2,10 @@ import "./Dashboard.css"
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_maintenance, electrical_system_check, exterior_painting, fire_safety_inspection, garbage_disposal, gutter_cleaning, lawn_garden_maintenance, pest_control, plumbing_repairs, pressureWash, roof_inspection, washing_machine, water_heater_flush, BeginnerBadge, HVACBadge, SafetyBadge, ExteriorBadge, IndoorBadge, ApplianceBadge, intermediateBadge, AdvanceBadge }  from "../../Images";
+import TaskPage from "../TaskPage/TaskPage";
 
-// Unused badges
-// ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, SeasonalBadge,
 
 interface Task {
   TaskImageURL: string;
@@ -15,11 +14,19 @@ interface Task {
   CostDiff: number;
   MaintenanceType: string;
   Frequency: string;
+  DIYVideoLink: string;
+  EstContractorCost: number; 
+  EstDIYCost:number;
+  HouseType: string;
+  TaskID: string;
 };
 
 const Dashboard = () => {
- const location = useLocation();
+ const location = useLocation(); 
  const [tasks, setTasks] = useState<Task[]>([]);
+ const [selectedTask, setSelectedTask] = useState<Task | null>(null);
+ const navigate = useNavigate();
+
 
 useEffect(() => {
     const getData = async () => {
@@ -45,6 +52,12 @@ useEffect(() => {
     }
   }, [location.state]);
 
+  const handleTaskClick = (task: Task) => {
+    setSelectedTask(task);
+    navigate("/TaskPage");
+  };
+  
+
   return (
  <>
   <div className="form-header">
@@ -65,8 +78,7 @@ useEffect(() => {
 
 <div className="card-container">
     {tasks.map((task, index) => (
-      
-          <div key={index} className="card">
+          <div key={index} className="card" onClick={() => handleTaskClick(task)}>
           {task.TaskImageURL === 'change_hvac_filters.jpg' && <img src={change_hvac_filters} alt={task.TaskName} className="card-img" />}
             {task.TaskImageURL === 'carpet_cleaning.jpg' && <img src={carpet_cleaning} alt={task.TaskName} className="card-img" />}
 
@@ -126,7 +138,6 @@ useEffect(() => {
               {task.MaintenanceType === "Pest Control" && <img src={IndoorBadge} alt={task.MaintenanceType} />}
 
               {task.MaintenanceType === "Safety" && <img src={SafetyBadge} alt={task.MaintenanceType} />}
-              
               </p>
 
 
@@ -135,7 +146,7 @@ useEffect(() => {
           </div>
         ))}
 </div>
-
+{selectedTask && <TaskPage task={selectedTask} />}
  </>
   )
 }

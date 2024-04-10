@@ -1,34 +1,41 @@
 import { Link, NavLink } from "react-router-dom";
-import  "./Nav.css";
+import "./Nav.css";
 
 const Nav = () => {
   return (
     <>
       <nav>
-       
         <ul>
-          <li> <Link to={"/"} className="title">
-          Homeshield
-        </Link></li>
           <li>
-            <NavLink to={""}>Services</NavLink>
+            {" "}
+            <Link to={"/"} className="title">
+              HomeShield
+            </Link>
+          </li>
+          <li>
+            <a href="#services" className="NavLink">
+              Services
+            </a>
           </li>
 
           <li>
-            <NavLink to={""}>Task</NavLink>
+            <a href="#task" className="NavLink">
+              Task
+            </a>
           </li>
 
           <li>
-            <NavLink to={""}>About</NavLink>
+            <a href="#about" className="NavLink">
+              About
+            </a>
           </li>
 
           <li>
             <NavLink to={"/TaskPage"}>TaskPage</NavLink>
           </li>
         </ul>
-        
       </nav>
-  </>
+    </>
   );
 };
 export default Nav;
