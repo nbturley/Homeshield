@@ -105,7 +105,7 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
             </tr>
             <tr>
               <td>Estimated Time</td>
-              <td>5-10 Minuets</td>
+              <td>5-10 Minutes</td>
               <td>Varies, typically faster than DIY</td>
             </tr>
             <tr>
