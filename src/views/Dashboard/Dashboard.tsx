@@ -7,10 +7,6 @@ import  { carpet_cleaning, change_hvac_filters, clean_dryer_vents, dishwasher_ma
 import TaskPage from "../TaskPage/TaskPage";
 
 
-
-// Unused badges
-// ThreeMonthsBadge, SixMonthsBadge, YearBadge, FiveYearBadge, SeasonalBadge,
-
 interface Task {
   TaskImageURL: string;
   TaskName: string;

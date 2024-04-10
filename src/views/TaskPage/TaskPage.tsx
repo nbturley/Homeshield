@@ -4,8 +4,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { VerifiedBadge, TopRatedBadge } from "../../Images";
 import YouTubePlayer from "./VideoPlayer";
 import { Task } from "../../Components/types";
-// import { BeginnerBadge, intermediateBadge, AdvanceBadge } from "../../Images";
-import { Caulk } from "../../Images";
+import { CT1, CT2, CT3, CT4 } from "../../Images";
 import { FiPhone } from "react-icons/fi";
 
 interface TaskPageProps {
@@ -147,7 +146,7 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
           <div className="image-and-company">
             <div className="image-div">
               <img
-                src={Caulk}
+                src={CT1}
                 alt="contractor-image"
                 className="contractor-img"
               />
@@ -176,7 +175,7 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
           <div className="image-and-company">
             <div className="image-div">
               <img
-                src={Caulk}
+                src={CT2}
                 alt="contractor-image"
                 className="contractor-img"
               />
@@ -204,7 +203,7 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
           <div className="image-and-company">
             <div className="image-div">
               <img
-                src={Caulk}
+                src={CT3}
                 alt="contractor-image"
                 className="contractor-img"
               />
@@ -232,7 +231,7 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
           <div className="image-and-company">
             <div className="image-div">
               <img
-                src={Caulk}
+                src={CT4}
                 alt="contractor-image"
                 className="contractor-img"
               />
