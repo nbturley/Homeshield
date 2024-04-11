@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
@@ -30,9 +30,6 @@ const Nav = () => {
             </a>
           </li>
 
-          <li>
-            <NavLink to={"/TaskPage"}>TaskPage</NavLink>
-          </li>
         </ul>
       </nav>
     </>

@@ -1,40 +1,41 @@
 import "./TaskPage.css";
-import { useNavigate } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa6";
+// import { useNavigate } from "react-router-dom";
+// import { FaArrowLeft } from "react-icons/fa6";
 import { VerifiedBadge, TopRatedBadge } from "../../Images";
 import YouTubePlayer from "./VideoPlayer";
-import { Task } from "../../Components/types";
 import { CT1, CT2, CT3, CT4 } from "../../Images";
 import { FiPhone } from "react-icons/fi";
+import { Task } from "../../Components/types";
 
-interface TaskPageProps {
+
+interface DashboardProps {
   task: Task;
 }
 
-const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
-  const navigate = useNavigate();
+const TaskPage: React.FC<DashboardProps> = ({}) => {
+  // const navigate = useNavigate();
 
-  const handleBackToDashboard = () => {
-    navigate("/Dashboard");
-  };
+  // const handleBackToDashboard = () => {
+  //   navigate("/Dashboard");
+  // };
 
   return (
     <>
       <div className="left-div">
-      <div className="arrow-div">
+      {/* <div className="arrow-div">
         <button className="task-back-arrow" onClick={handleBackToDashboard}>
           <FaArrowLeft />
         </button>
-      </div>
+      </div> */}
         <div className="video-box">
           <h1 className="learn-how">
-            Learn How: Change Furnace Filter {task && task.TaskName}
+            Learn How: Change Furnace Filter
           </h1>
           <YouTubePlayer videoId="ED3bfesbE_Y?si=ZzZMnRKjT4g-8iYo" />
         </div>
-<div className="add-button-div">
+{/* <div className="add-button-div">
         <button className="add-task">Add to My task</button>
-        </div>
+        </div> */}
 
         <div className="needs-div">
           <h1 className="what-you-need">Everything you'll need</h1>
@@ -151,14 +152,14 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
                 className="contractor-img"
               />
             </div>
-            <h1 className="company-name">ABC Windows & Doors</h1>
+            <h1 className="company-name">Cool Breeze Solutions</h1>
           </div>
 
           <p className="company-info">
-            Window/door specialists, 15+ years experience.
+          Experts in creating comfortable indoor environments in coastal areas.
           </p>
 
-          <p className="company-price">Price starts from: $75 per window</p>
+          <p className="company-price">Price starts from: $175 per unit.</p>
           <div className="button-container">
             <button className="contractor-btn">
               <FiPhone /> Contact
@@ -180,14 +181,14 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
                 className="contractor-img"
               />
             </div>
-            <h1 className="company-name">Smith's Caulking & Sealing</h1>
+            <h1 className="company-name">Salt Air Comfort</h1>
           </div>
 
           <p className="company-info">
-            20+ years specializing in weatherproofing and draft prevention.
+          Experienced in HVAC solutions for homes in humid and salt-air environments.
           </p>
 
-          <p className="company-price">Price starts from: $65 per window</p>
+          <p className="company-price">Price starts from: $140 per unit.</p>
           <div className="button-container">
             <button className="contractor-btn">
               <FiPhone /> Contact
@@ -208,14 +209,14 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
                 className="contractor-img"
               />
             </div>
-            <h1 className="company-name">The Detail Doctor</h1>
+            <h1 className="company-name">Sea Breeze HVAC</h1>
           </div>
 
           <p className="company-info">
-            Meticulous handyman services, focused on energy-saving upgrades.
+          Dedicated to providing efficient HVAC services for coastal residences.
           </p>
 
-          <p className="company-price">Price starts from: $50 per window</p>
+          <p className="company-price">Price starts from: $150 per unit.</p>
           <div className="button-container">
             <button className="contractor-btn">
               <FiPhone /> Contact
@@ -236,14 +237,14 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
                 className="contractor-img"
               />
             </div>
-            <h1 className="company-name">Coastal Home Pros</h1>
+            <h1 className="company-name">Coastal Comfort Systems</h1>
           </div>
 
           <p className="company-info">
-            Experts in sealing homes in humid, salt-air environments.
+          Dedicated to providing efficient HVAC services for coastal homes.
           </p>
 
-          <p className="company-price">Price starts from: $80 per window</p>
+          <p className="company-price">Price starts from: $120 per unit.</p>
           <div className="button-container">
             <button className="contractor-btn">
               <FiPhone /> Contact

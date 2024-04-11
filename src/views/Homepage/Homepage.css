@@ -241,7 +241,7 @@ body {
 /* Popular Task Section */
 .popular-task {
   width: 1216px;
-  padding: 30px 32px 60px 30px;
+  padding: 30px 32px 60px 32px;
 }
 
 .popular-task h1 {
@@ -257,48 +257,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* Will use for the cards on the Dashboard.tsx */
-
-/* .task-list {
-  width: 1440px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.card-img {
-  height: 216px;
-  min-width: 100%;
-}
-
-.card-text-box h5 {
-  color: #111827;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
-  letter-spacing: -0.48px;
-}
-
-.card-text-box p {
-  color: #6b7280;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.DIY-badges {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 8px;
-}
-
-.Category-badges {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 8px;
-} */
 
 /* Bottom Container */
 .bottom-container {
@@ -335,11 +293,16 @@ body {
 }
 
 /* Footer */
+/* .footer {
+  padding: 80px 32px 70px 32px;
+} */
+
 .footer ul {
   list-style-type: none;
   padding: 0;
   text-align: center;
 }
+
 .footer-header {
   margin-right: 150px;
   font-weight: bold;
