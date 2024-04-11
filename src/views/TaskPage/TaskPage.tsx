@@ -8,16 +8,17 @@ import { FiPhone } from "react-icons/fi";
 import { Task } from "../../Components/types";
 
 
-interface DashboardProps {
+interface TasksProps {
   task: Task;
 }
 
-const TaskPage: React.FC<DashboardProps> = ({}) => {
+const TaskPage: React.FC<TasksProps> = ({task}) => {
   // const navigate = useNavigate();
 
   // const handleBackToDashboard = () => {
   //   navigate("/Dashboard");
   // };
+  console.log("Selected Task in TaskPage:", task);
 
   return (
     <>
@@ -38,7 +39,7 @@ const TaskPage: React.FC<DashboardProps> = ({}) => {
         </div> */}
 
         <div className="needs-div">
-          <h1 className="what-you-need">Everything you'll need</h1>
+          <h1 className="what-you-need">Everything you'll need {}</h1>
           <form action="checklist">
             <div className="input-container">
               <input
