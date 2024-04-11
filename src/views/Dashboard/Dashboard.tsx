@@ -33,7 +33,7 @@ import  {
   SixMonthsBadge,
   YearBadge,
   FiveYearBadge, }  from "../../Images";
-import TaskPage from "../TaskPage/TaskPage";
+// import TaskPage from "../TaskPage/TaskPage";
 
 
 interface Task {
@@ -301,7 +301,7 @@ const Dashboard = () => {
         </div>
           
      
-      {selectedTask && <TaskPage task={selectedTask} />};
+      {selectedTask }
       </>
   );
 };

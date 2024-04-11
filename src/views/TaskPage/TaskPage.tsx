@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { VerifiedBadge, TopRatedBadge } from "../../Images";
 import YouTubePlayer from "./VideoPlayer";
-import { Task } from "../../Components/types";
+// import { Task } from "../../Components/types";
 import { CT1, CT2, CT3, CT4 } from "../../Images";
 import { FiPhone } from "react-icons/fi";
 
-interface TaskPageProps {
-  task: Task;
-}
+// interface TaskPageProps {
+//   task: Task;
+// }
 
-const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
+const TaskPage = () => {
   const navigate = useNavigate();
 
   const handleBackToDashboard = () => {
@@ -28,7 +28,8 @@ const TaskPage: React.FC<TaskPageProps> = ({ task }) => {
       </div>
         <div className="video-box">
           <h1 className="learn-how">
-            Learn How: Change Furnace Filter {task && task.TaskName}
+            Learn How: Change Furnace Filter 
+            {/* {task && task.TaskName} */}
           </h1>
           <YouTubePlayer videoId="ED3bfesbE_Y?si=ZzZMnRKjT4g-8iYo" />
         </div>
