@@ -42,15 +42,15 @@ const Homepage = () => {
       <Nav />
       {/* Top Section */}
       <div className="top-container">
-        <div className="text-box">
-          <h6>BECOME A CONFIDENT HOMEOWNER</h6>
+        <div className="text-box" id="about">
+          <h6>Stop Stressing, Start Owning Your Home</h6>
           <h1>Take charge of your home maintenance</h1>
-          <p>
-            Get your free personalized checklist and feel confident your home is
-            in great shape.
+          <p className="about">With HomeShield, take control of your home maintenance routine. We'll create a personalized schedule based on your climate & property type, helping you save money with easy DIY video guides.</p>
+          <p className="get-checklist">
+          Get your free checklist and feel confident your home is in top shape!
           </p>
           <Link to={"/questions1"} className="linkCTA">
-            <button className="CTA">Get to-do list</button>
+            <button className="CTA">Get checklist!</button>
           </Link>
         </div>
 
@@ -62,7 +62,7 @@ const Homepage = () => {
       </div>
 
       {/* Map Section */}
-      <div className="map-container">
+      <div className="map-container" id="services">
         <img className="US-map" src={USMap} alt="US map" />
 
         <div className="map-text-box">
@@ -322,7 +322,7 @@ const Homepage = () => {
       </div>
 
       {/* Popular Task Section */}
-      <div className="popular-task">
+      <div className="popular-task" id="task">
         <h1 className="pop-task">Popular Task:</h1>
         <div className="task-list">
           <img src={TasksCards}/>

@@ -1,7 +1,6 @@
 .arrow-div {
   display: flex;
   justify-content: flex-start;
-  border: 5px solid blue;
 }
 
 .task-back-arrow {
@@ -18,65 +17,215 @@
 }
 
 .left-div {
-  width: 70%;
+  width: 60%;
   position: absolute;
-  left: 15px;
-  height: 100%;
-  border: 5px solid green;
+  left: 50px;
+  padding-left: 20px;
+  height: 100vh;
+}
+
+.learn-how {
+  color: #111827;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.56px;
+}
+
+.video-box {
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 50px; */
+  /* align-self: center; */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.add-button-div {
+  display: flex;
+  justify-content: flex-end; 
+  margin-top: 14px;
+  margin-right: 160px;
+  }
+
+.add-task {
+  display: flex;
+  height: 48px;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  color: #fff;
+  border: 1px solid #14b8a6;
+  background: #14b8a6;
+  box-shadow: 0px 2px 6px 0px rgba(16, 24, 40, 0.06);
+}
+
+.needs-div {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.what-you-need {
+  color: #111827;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.48px;
+}
+
+#tools-needed {
+  display: flex;
+  width: 24px;
+  height: 24px;
+}
+
+.tools-list {
+  color: #374151;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 16px;
+}
+
+.pro {
+  margin-bottom: 48px;
+}
+
+.DIY-or-pro {
+  color: #111827;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.48px;
+}
+
+.decision {
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .right-div {
-  width: 360px;
+  width: 30%;
   height: 100vh;
   position: absolute;
-  right: 15px;
+  right: 1px;
   display: flex;
   padding: 32px 16px;
-  /* flex-direction: column; 
-  align-items: center;  */
+  flex-direction: column;
   gap: 32px;
-  border: 5px solid red;
 }
 
 .help {
-font-size: 24px;
-font-weight: 700;
-line-height: 32px; 
-letter-spacing: -0.48px;
-color: #374151;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.48px;
+  color: #374151;
 }
 
 .help-para {
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px; 
-color: #6B7280;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #6b7280;
 }
 
 .contractor-card {
-display: flex;
-padding: 20px;
-flex-direction: column;
-align-items: flex-end;
-gap: 20px;
-align-self: stretch;
-border-radius: 12px;
-background:  #fff;
-box-shadow: 0px 6px 15px -2px rgba(16, 24, 40, 0.08), 0px 6px 15px -2px rgba(16, 24, 40, 0.08);
-border: 5px solid aqua;
+  width: 360px;
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 6px 15px -2px rgba(16, 24, 40, 0.08),
+    0px 6px 15px -2px rgba(16, 24, 40, 0.08);
 }
 
-/* .badge-div {
-   
-} */
-
-.verifiedBadge{
-padding: 6px 12px;
-gap: 8px;
+.verifiedBadge {
+  padding: 6px 12px;
 }
 
 .topRatedBadge {
-padding: 6px 12px;
-gap: 8px;
+  gap: 8px;
+}
+
+.image-and-company {
+  display: flex;
+  align-items: center;
+}
+
+.contractor-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.company-name {
+  color: #374151;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+  margin-left: 10px;
+}
+
+.company-info {
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.company-price {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.contractor-btn {
+  display: flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #6366f1;
+  background: #6366f1;
+  color: #fff;
+  float: right;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.04),
+    0px 1px 2px 0px rgba(16, 24, 40, 0.04);
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* Table */
+th {
+  border-bottom: 2px solid #374151;
+  text-align: left;
+  padding: 16px 0px 16px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+}
+
+td {
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  padding: 16px;
 }
