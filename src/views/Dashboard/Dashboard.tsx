@@ -32,7 +32,9 @@ import  {
   ThreeMonthsBadge,
   SixMonthsBadge,
   YearBadge,
-  FiveYearBadge, }  from "../../Images";
+  FiveYearBadge,
+  EveryTwoWeeksBadge,
+  MonthlyBadge }  from "../../Images";
 // import TaskPage from "../TaskPage/TaskPage";
 
 
@@ -284,14 +286,14 @@ const Dashboard = () => {
                       {task.Frequency === "Every 6 Months" && (
                         <img src={SixMonthsBadge} alt={task.Frequency} />
                       )}
-                      {/* {task.Frequency === "Every 2 Weeks" && <img src={SixMonthsBadge} alt={task.Frequency} />} */}
+                      {task.Frequency === "Every 2 Weeks" && <img src={EveryTwoWeeksBadge} alt={task.Frequency} />}
                       {task.Frequency === "Every 6-12 Months" && (
                         <img src={SixMonthsBadge} alt={task.Frequency} />
                       )}
                       {task.Frequency === "Every 5-10 Years" && (
                         <img src={FiveYearBadge} alt={task.Frequency} />
                       )}
-                      {/* {task.Frequency === "Every Month" && <img src={SixMonthsBadge} alt={task.Frequency} />} */}
+                      {task.Frequency === "Every Month" && <img src={MonthlyBadge} alt={task.Frequency} />}
                     </p>
                   </div>
                 
