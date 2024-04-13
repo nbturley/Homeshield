@@ -117,7 +117,6 @@
   position: absolute;
   right: 5px;
   display: flex;
-  padding: 32px 16px;
   flex-direction: column;
   gap: 32px;
 }

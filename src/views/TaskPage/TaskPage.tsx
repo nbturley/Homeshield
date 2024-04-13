@@ -5,41 +5,48 @@ import { VerifiedBadge, TopRatedBadge } from "../../Images";
 import YouTubePlayer from "./VideoPlayer";
 import { CT1, CT2, CT3, CT4 } from "../../Images";
 import { FiPhone } from "react-icons/fi";
-import { Task } from "../../Components/types";
+import { useLocation } from "react-router-dom";
+// import YouTube from 'react-youtube';
 
-
-interface TasksProps {
-  task: Task;
-}
-
-const TaskPage: React.FC<TasksProps> = ({task}) => {
+const TaskPage: React.FC = ({}) => {
+  const location = useLocation();
+  const taskData = location.state && location.state.taskData;
   // const navigate = useNavigate();
 
   // const handleBackToDashboard = () => {
   //   navigate("/Dashboard");
   // };
-  console.log("Selected Task in TaskPage:", task);
+  // console.log("Selected Task in TaskPage:", task);
+
+  if (!taskData) {
+    return <div>No task data available</div>;
+  }
+
 
   return (
     <>
       <div className="left-div">
-      {/* <div className="arrow-div">
+        {/* <div className="arrow-div">
         <button className="task-back-arrow" onClick={handleBackToDashboard}>
           <FaArrowLeft />
         </button>
       </div> */}
         <div className="video-box">
           <h1 className="learn-how">
-            Learn How: Change Furnace Filter
+            Learn How: {taskData.TaskName}
           </h1>
-          <YouTubePlayer videoId="ED3bfesbE_Y?si=ZzZMnRKjT4g-8iYo" />
+               <YouTubePlayer videoId="ED3bfesbE_Y?si=ZzZMnRKjT4g-8iYo"  
+          // videoId={taskData.DIYVideoLink}
+          />
         </div>
-{/* <div className="add-button-div">
+        {/* <div className="add-button-div">
         <button className="add-task">Add to My task</button>
         </div> */}
 
         <div className="needs-div">
-          <h1 className="what-you-need">Everything you'll need {}</h1>
+          <h1 className="what-you-need">
+            Everything you'll need
+          </h1>
           <form action="checklist">
             <div className="input-container">
               <input
@@ -90,43 +97,43 @@ const TaskPage: React.FC<TasksProps> = ({task}) => {
         <div>
           <table>
             <thead>
-            <tr>
-              <th>Feature</th>
-              <th>DIY</th>
-              <th>Hire a Pro</th>
-            </tr>
+              <tr>
+                <th>Feature</th>
+                <th>DIY</th>
+                <th>Hire a Pro</th>
+              </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>Materials</td>
-              <td>
-                New filter that fits your furnace, sharpie marker, screwdriver
-                or pliers
-              </td>
-              <td>Contractor provides all materials</td>
-            </tr>
-            <tr>
-              <td>Estimated Time</td>
-              <td>5-10 Minuets</td>
-              <td>Varies, typically faster than DIY</td>
-            </tr>
-            <tr>
-              <td>Cost</td>
-              <td>$10-$30 (materials only)</td>
-              <td>$50 to $150 per hour</td>
-            </tr>
-            <tr>
-              <td>Skill Level</td>
-              <td>Beginner to Intermediate</td>
-              <td>Assumed professional expertise</td>
-            </tr>
-            <tr>
-              <td>Additional Considerations</td>
-              <td>Mess potential, time commitment</td>
-              <td>
-                Access to specialized tools, potential for faster completion
-              </td>
-            </tr>
+              <tr>
+                <td>Materials</td>
+                <td>
+                  New filter that fits your furnace, sharpie marker, screwdriver
+                  or pliers
+                </td>
+                <td>Contractor provides all materials</td>
+              </tr>
+              <tr>
+                <td>Estimated Time</td>
+                <td>5-10 Minuets</td>
+                <td>Varies, typically faster than DIY</td>
+              </tr>
+              <tr>
+                <td>Cost</td>
+                <td>${taskData.EstDIYCost} (materials only)</td>
+                <td>${taskData.EstContractorCost}</td>
+              </tr>
+              <tr>
+                <td>Skill Level</td>
+                <td>{taskData.TaskLevel}</td>
+                <td>Assumed professional expertise</td>
+              </tr>
+              <tr>
+                <td>Additional Considerations</td>
+                <td>Mess potential, time commitment</td>
+                <td>
+                  Access to specialized tools, potential for faster completion
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -157,7 +164,8 @@ const TaskPage: React.FC<TasksProps> = ({task}) => {
           </div>
 
           <p className="company-info">
-          Experts in creating comfortable indoor environments in coastal areas.
+            Experts in creating comfortable indoor environments in coastal
+            areas.
           </p>
 
           <p className="company-price">Price starts from: $175 per unit.</p>
@@ -186,7 +194,8 @@ const TaskPage: React.FC<TasksProps> = ({task}) => {
           </div>
 
           <p className="company-info">
-          Experienced in HVAC solutions for homes in humid and salt-air environments.
+            Experienced in HVAC solutions for homes in humid and salt-air
+            environments.
           </p>
 
           <p className="company-price">Price starts from: $140 per unit.</p>
@@ -214,7 +223,8 @@ const TaskPage: React.FC<TasksProps> = ({task}) => {
           </div>
 
           <p className="company-info">
-          Dedicated to providing efficient HVAC services for coastal residences.
+            Dedicated to providing efficient HVAC services for coastal
+            residences.
           </p>
 
           <p className="company-price">Price starts from: $150 per unit.</p>
@@ -242,7 +252,7 @@ const TaskPage: React.FC<TasksProps> = ({task}) => {
           </div>
 
           <p className="company-info">
-          Dedicated to providing efficient HVAC services for coastal homes.
+            Dedicated to providing efficient HVAC services for coastal homes.
           </p>
 
           <p className="company-price">Price starts from: $120 per unit.</p>
@@ -256,4 +266,5 @@ const TaskPage: React.FC<TasksProps> = ({task}) => {
     </>
   );
 };
+
 export default TaskPage;

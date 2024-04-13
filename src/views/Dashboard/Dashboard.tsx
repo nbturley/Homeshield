@@ -39,26 +39,11 @@ import {
 import TaskPage from "../TaskPage/TaskPage";
 import { Task } from "../../Components/types";
 
-// interface ITask {
-//   TaskImageURL: string;
-//   TaskName: string;
-//   TaskLevel: string;
-//   CostDiff: number;
-//   MaintenanceType: string;
-//   Frequency: string;
-//   DIYVideoLink: string;
-//   EstContractorCost: number;
-//   EstDIYCost: number;
-//   HouseType: string;
-//   TaskID: string;
-// }
 
 const Dashboard = () => {
   const location = useLocation();
   const [tasks, setTasks] = useState<Task[]>([]);
-  console.log(tasks, "task state 59")
-  const [selectedTask, setSelectedTask] = useState([]);
-  console.log(selectedTask, "line 61")
+  const [selectedTask, setSelectedTask] = useState<Task | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -88,17 +73,9 @@ const Dashboard = () => {
     }
   }, [location.state]);
 
-  // useEffect(() => {
-  //   if (selectedTask) {
-  //     console.log("Selected Task:", selectedTask);
-  //   }
-  // }, [selectedTask]);
-
-  const handleTaskClick = (task) => {
-    console.log(task, "line 96")
+  const handleTaskClick = (task: Task) => {
     setSelectedTask(task);
-    navigate("/TaskPage");
-   
+    navigate(`/taskPage/${task.TaskID}`, { state: { taskData: task } });
   };
 
   return (
@@ -134,13 +111,11 @@ const Dashboard = () => {
 
       <div className="card-container">
         {tasks.map((task, index) => {
-          const {TaskName} = task
-          console.log(TaskName, "inside map")
           return ( 
             <div
               key={index}
               className="card"
-              onClick={() => handleTaskClick(TaskName)}
+              onClick={() => handleTaskClick(task)}
             >
               {task.TaskImageURL === "change_hvac_filters.jpg" && (
                 <img
@@ -356,7 +331,7 @@ const Dashboard = () => {
         } 
         )}
       </div>
-      {/* {selectedTask && <TaskPage task={selectedTask} />} */}
+      {selectedTask && <TaskPage />}
     </>
   );
 };
