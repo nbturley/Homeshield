@@ -8,6 +8,30 @@ import Nav from "../../Components/Nav/Nav";
 const Homepage = () => {
   const videoRef = useRef(null);
 
+  const getData = async () => {
+    try {
+      const response = await fetch(
+        "https://homeshield-flask.onrender.com/api/maintenance-tasks",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const data = await response.json();
+      // setTasks(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  const handleTaskClick = () => {
+    getData();
+  };
+
   useEffect(() => {
     const options = {
       root: null,
@@ -50,7 +74,7 @@ const Homepage = () => {
           Get your free checklist and feel confident your home is in top shape!
           </p>
           <Link to={"/questions1"} className="linkCTA">
-            <button className="CTA">Get checklist!</button>
+            <button className="CTA" onClick={() => handleTaskClick()}>Get checklist!</button>
           </Link>
         </div>
 
@@ -316,7 +340,7 @@ const Homepage = () => {
             enjoy your home.
           </p>
           <Link to={"/questions1"} className="linkCTA">
-            <button className="CTA">Show Me How</button>
+            <button className="CTA" onClick={() => handleTaskClick()}>Show Me How</button>
           </Link>
         </div>
       </div>
@@ -340,7 +364,7 @@ const Homepage = () => {
             Get a clear plan of what to do and when, customized just for you.
           </p>
           <Link to={"/questions1"} className="linkCTA">
-            <button className="CTA">Get Started</button>
+            <button className="CTA" onClick={() => handleTaskClick()}>Get Started</button>
           </Link>
         </div>
       </div>

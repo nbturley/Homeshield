@@ -1,10 +1,15 @@
 import "./TaskPage.css";
-// import { useNavigate } from "react-router-dom";
-// import { FaArrowLeft } from "react-icons/fa6";
+// // import { useNavigate } from "react-router-dom";
+// // import { FaArrowLeft } from "react-icons/fa6";
 import { VerifiedBadge, TopRatedBadge } from "../../Images";
 import YouTubePlayer from "./VideoPlayer";
+// import { Task } from "../../Components/types";
 import { CT1, CT2, CT3, CT4 } from "../../Images";
 import { FiPhone } from "react-icons/fi";
+
+// interface TaskPageProps {
+//   task: Task;
+// }
 import { useLocation } from "react-router-dom";
 // import YouTube from 'react-youtube';
 
@@ -13,9 +18,9 @@ const TaskPage: React.FC = ({}) => {
   const taskData = location.state && location.state.taskData;
   // const navigate = useNavigate();
 
-  // const handleBackToDashboard = () => {
-  //   navigate("/Dashboard");
-  // };
+  // // const handleBackToDashboard = () => {
+  // //   navigate("/Dashboard");
+  // // };
   // console.log("Selected Task in TaskPage:", task);
 
   if (!taskData) {
@@ -26,7 +31,7 @@ const TaskPage: React.FC = ({}) => {
   return (
     <>
       <div className="left-div">
-        {/* <div className="arrow-div">
+      {/* <div className="arrow-div">
         <button className="task-back-arrow" onClick={handleBackToDashboard}>
           <FaArrowLeft />
         </button>
@@ -40,7 +45,7 @@ const TaskPage: React.FC = ({}) => {
           />
         </div>
         {/* <div className="add-button-div">
-        <button className="add-task">Add to My task</button>
+          <button className="add-task">Add to My task</button>
         </div> */}
 
         <div className="needs-div">
@@ -56,7 +61,7 @@ const TaskPage: React.FC = ({}) => {
                 value="needs"
               />
               <label htmlFor="tools" className="tools-list">
-                New filter that fits your furnace
+                New filter that fits your HVAC system
               </label>
             </div>
 
@@ -114,7 +119,7 @@ const TaskPage: React.FC = ({}) => {
               </tr>
               <tr>
                 <td>Estimated Time</td>
-                <td>5-10 Minuets</td>
+                <td>5-10 Minutes</td>
                 <td>Varies, typically faster than DIY</td>
               </tr>
               <tr>
@@ -164,8 +169,7 @@ const TaskPage: React.FC = ({}) => {
           </div>
 
           <p className="company-info">
-            Experts in creating comfortable indoor environments in coastal
-            areas.
+          Experts in creating comfortable indoor environments in coastal areas.
           </p>
 
           <p className="company-price">Price starts from: $175 per unit.</p>
@@ -194,8 +198,7 @@ const TaskPage: React.FC = ({}) => {
           </div>
 
           <p className="company-info">
-            Experienced in HVAC solutions for homes in humid and salt-air
-            environments.
+          Experienced in HVAC solutions for homes in humid and salt-air environments.
           </p>
 
           <p className="company-price">Price starts from: $140 per unit.</p>
@@ -227,7 +230,7 @@ const TaskPage: React.FC = ({}) => {
             residences.
           </p>
 
-          <p className="company-price">Price starts from: $150 per unit.</p>
+          <p className="company-price">Price starts from: $50 per unit</p>
           <div className="button-container">
             <button className="contractor-btn">
               <FiPhone /> Contact
