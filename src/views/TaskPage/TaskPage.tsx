@@ -1,6 +1,6 @@
 import "./TaskPage.css";
-// import { useNavigate } from "react-router-dom";
-// import { FaArrowLeft } from "react-icons/fa6";
+// // import { useNavigate } from "react-router-dom";
+// // import { FaArrowLeft } from "react-icons/fa6";
 import { VerifiedBadge, TopRatedBadge } from "../../Images";
 import YouTubePlayer from "./VideoPlayer";
 // import { Task } from "../../Components/types";
@@ -10,13 +10,23 @@ import { FiPhone } from "react-icons/fi";
 // interface TaskPageProps {
 //   task: Task;
 // }
+import { useLocation } from "react-router-dom";
+// import YouTube from 'react-youtube';
 
-const TaskPage = () => {
+const TaskPage: React.FC = ({}) => {
+  const location = useLocation();
+  const taskData = location.state && location.state.taskData;
   // const navigate = useNavigate();
 
-  // const handleBackToDashboard = () => {
-  //   navigate("/Dashboard");
-  // };
+  // // const handleBackToDashboard = () => {
+  // //   navigate("/Dashboard");
+  // // };
+  // console.log("Selected Task in TaskPage:", task);
+
+  if (!taskData) {
+    return <div>No task data available</div>;
+  }
+
 
   return (
     <>
@@ -28,17 +38,20 @@ const TaskPage = () => {
       </div> */}
         <div className="video-box">
           <h1 className="learn-how">
-            Learn How: Change HVAC Filter 
-            {/* {task && task.TaskName} */}
+            Learn How: {taskData.TaskName}
           </h1>
-          <YouTubePlayer videoId="ED3bfesbE_Y?si=ZzZMnRKjT4g-8iYo" />
+               <YouTubePlayer videoId="ED3bfesbE_Y?si=ZzZMnRKjT4g-8iYo"  
+          // videoId={taskData.DIYVideoLink}
+          />
         </div>
         {/* <div className="add-button-div">
           <button className="add-task">Add to My task</button>
         </div> */}
 
         <div className="needs-div">
-          <h1 className="what-you-need">Everything you'll need</h1>
+          <h1 className="what-you-need">
+            Everything you'll need
+          </h1>
           <form action="checklist">
             <div className="input-container">
               <input
@@ -89,43 +102,43 @@ const TaskPage = () => {
         <div>
           <table>
             <thead>
-            <tr>
-              <th>Feature</th>
-              <th>DIY</th>
-              <th>Hire a Pro</th>
-            </tr>
+              <tr>
+                <th>Feature</th>
+                <th>DIY</th>
+                <th>Hire a Pro</th>
+              </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>Materials</td>
-              <td>
-                New filter that fits your furnace, sharpie marker, screwdriver
-                or pliers
-              </td>
-              <td>Contractor provides all materials</td>
-            </tr>
-            <tr>
-              <td>Estimated Time</td>
-              <td>5-10 Minutes</td>
-              <td>Varies, typically faster than DIY</td>
-            </tr>
-            <tr>
-              <td>Cost</td>
-              <td>$10-$30 (materials only)</td>
-              <td>$50 to $175 per hour</td>
-            </tr>
-            <tr>
-              <td>Skill Level</td>
-              <td>Beginner to Intermediate</td>
-              <td>Assumed professional expertise</td>
-            </tr>
-            <tr>
-              <td>Additional Considerations</td>
-              <td>Mess potential, time commitment</td>
-              <td>
-                Access to specialized tools, potential for faster completion
-              </td>
-            </tr>
+              <tr>
+                <td>Materials</td>
+                <td>
+                  New filter that fits your furnace, sharpie marker, screwdriver
+                  or pliers
+                </td>
+                <td>Contractor provides all materials</td>
+              </tr>
+              <tr>
+                <td>Estimated Time</td>
+                <td>5-10 Minutes</td>
+                <td>Varies, typically faster than DIY</td>
+              </tr>
+              <tr>
+                <td>Cost</td>
+                <td>${taskData.EstDIYCost} (materials only)</td>
+                <td>${taskData.EstContractorCost}</td>
+              </tr>
+              <tr>
+                <td>Skill Level</td>
+                <td>{taskData.TaskLevel}</td>
+                <td>Assumed professional expertise</td>
+              </tr>
+              <tr>
+                <td>Additional Considerations</td>
+                <td>Mess potential, time commitment</td>
+                <td>
+                  Access to specialized tools, potential for faster completion
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -209,11 +222,12 @@ const TaskPage = () => {
                 className="contractor-img"
               />
             </div>
-            <h1 className="company-name">The Detail Doctor</h1>
+            <h1 className="company-name">Sea Breeze HVAC</h1>
           </div>
 
           <p className="company-info">
-            Meticulous handyman services, focused on energy-saving upgrades.
+            Dedicated to providing efficient HVAC services for coastal
+            residences.
           </p>
 
           <p className="company-price">Price starts from: $50 per unit</p>
@@ -255,4 +269,5 @@ const TaskPage = () => {
     </>
   );
 };
+
 export default TaskPage;

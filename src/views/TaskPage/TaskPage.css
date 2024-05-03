@@ -19,7 +19,7 @@
 .left-div {
   width: 60%;
   position: absolute;
-  left: 50px;
+  left: 5px;
   padding-left: 20px;
   height: 100vh;
 }
@@ -115,9 +115,8 @@
   width: 30%;
   height: 100vh;
   position: absolute;
-  right: 1px;
+  right: 5px;
   display: flex;
-  padding: 32px 16px;
   flex-direction: column;
   gap: 32px;
 }

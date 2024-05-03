@@ -1,4 +1,4 @@
-import "./Dashboard.css";
+import "./Dashboard.css";;
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect, useState } from "react";
@@ -53,12 +53,10 @@ interface Task {
 };
 
 const Dashboard = () => {
- const location = useLocation(); 
- const [tasks, setTasks] = useState<Task[]>([]);
- const [selectedTask, setSelectedTask] = useState<Task | null>(null);
- const navigate = useNavigate();
-
-
+  const location = useLocation();
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [selectedTask, setSelectedTask] = useState<Task | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
@@ -89,9 +87,8 @@ const Dashboard = () => {
 
   const handleTaskClick = (task: Task) => {
     setSelectedTask(task);
-    navigate("/TaskPage");
+    navigate(`/taskPage/${task.TaskID}`, { state: { taskData: task } });
   };
-  
 
   return (
     
